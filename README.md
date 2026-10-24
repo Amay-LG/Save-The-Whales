@@ -1,6 +1,20 @@
 # Save-The-Whales
 
-## WhaleGuard hackathon demonstration
+## Santa Barbara geographic simulation
+
+Run `python3 -m whaleguard --scenario santa-barbara --port 8766`, then open
+http://127.0.0.1:8766. It shows the Santa Barbara coastline, nine archived NOAA AIS
+tracks, historical humpback observations, and five simulated ships. WG-01 follows
+the recorded VENUS HORIZON passage and automatically replans for staged whale
+zones and predicted simulated traffic encounters.
+
+For optional live AISStream reports, run `zsh scripts/run_santa_barbara.zsh`.
+This prepares a local virtual environment, prompts for your API key without echo,
+and serves the map at http://127.0.0.1:8767. The key stays in process memory and
+is sent only by the backend to AISStream; it is never written into a repository
+file or returned to the browser. See [the regional setup guide](whaleguard/REGIONAL.md).
+
+## Original WhaleGuard hackathon demonstration
 
 Run `python3 -m whaleguard`, then open http://127.0.0.1:8765. No dependencies
 required beyond Python 3.10+. One fictional ship navigates and reroutes

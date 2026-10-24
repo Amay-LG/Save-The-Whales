@@ -7,3 +7,5 @@ data/raw/*
 !data/raw/README.md
 __pycache__/
 .pytest_cache/
+
+.venv/
