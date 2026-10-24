@@ -1,0 +1,2 @@
+# Optional AISStream transport. The archived Santa Barbara demo needs no packages.
+websockets>=15,<18
