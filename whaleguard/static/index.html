@@ -8,21 +8,21 @@
 </style>
 </head>
 <body><main>
-<header><div class="brand">◒ Whale<span>Guard</span></div><div class="badge">FICTIONAL SIMULATION</div></header>
+<header><div class="brand">◒ Whale<span>Guard</span></div><div class="badge" id="modeBadge">FICTIONAL SIMULATION</div></header>
 <div class="intro"><div><h1>A quieter course. Chosen automatically.</h1><p>One simulated ship. A changing ocean. No commands required.</p></div><div class="status"><span class="dot"></span><span id="status">Connecting to simulation</span></div></div>
 <div class="layout"><section class="map-panel" aria-label="Spectator map of fictional voyage">
-<div class="map-head"><span>FICTIONAL WATERS / WG-01</span><span>1 second = 1.5 simulated minutes</span></div>
+<div class="map-head"><span id="frameLabel">FICTIONAL WATERS / WG-01</span><span id="clockLabel">1 second = 1.5 simulated minutes</span></div>
 <svg id="map" viewBox="-2 -2 34 23" role="img" aria-label="Simulated ship route, whale speed zones, and blocked island">
 <defs><pattern id="grid" width="2" height="2" patternUnits="userSpaceOnUse"><path d="M 2 0 L 0 0 0 2" fill="none" stroke="#1b3843" stroke-width=".025"/></pattern></defs>
 <rect x="0" y="0" width="30" height="18" fill="url(#grid)" stroke="#25414a" stroke-width=".05"/>
 <g id="zones"></g><polyline id="old" fill="none" stroke="#b0bdc8" stroke-width=".10" stroke-dasharray=".3 .25" opacity=".6"/><polyline id="route" fill="none" stroke="#85f4c5" stroke-width=".13" stroke-linejoin="round"/>
-<g id="markers"></g><g id="ship"><circle r=".58" fill="#85f4c5" opacity=".12"/><circle r=".22" fill="#e8fff6" stroke="#85f4c5" stroke-width=".08"/><text x=".65" y="-.55" fill="#e8fff6" font-size=".45">WG-01 · SIMULATED</text></g>
-<text x="0" y="19.5" fill="#8ba7b1" font-size=".4">LOCAL FICTIONAL COORDINATES · KILOMETRES</text><path d="M26 19 L30 19 M26 18.8 L26 19.2 M30 18.8 L30 19.2" stroke="#8ba7b1" stroke-width=".05"/><text x="27.4" y="19.7" fill="#8ba7b1" font-size=".4">4 km</text>
+<g id="sightings"></g><g id="markers"></g><g id="ship"><circle r=".58" fill="#85f4c5" opacity=".12"/><circle r=".22" fill="#e8fff6" stroke="#85f4c5" stroke-width=".08"/><text x=".65" y="-.55" fill="#e8fff6" font-size=".45">WG-01 · SIMULATED</text></g>
+<text id="coordinateLabel" x="0" y="19.5" fill="#8ba7b1" font-size=".4">LOCAL FICTIONAL COORDINATES · KILOMETRES</text><path d="M26 19 L30 19 M26 18.8 L26 19.2 M30 18.8 L30 19.2" stroke="#8ba7b1" stroke-width=".05"/><text x="27.4" y="19.7" fill="#8ba7b1" font-size=".4">4 km</text>
 </svg>
 <div class="legend"><span><i class="key"></i>Active route</span><span><i class="key old"></i>Previous route</span><span><i class="key slow"></i>Speed limit zone</span><span><i class="key block"></i>Blocked land</span></div>
 <div class="stats"><div class="stat"><div class="label">Voyage elapsed</div><div class="value"><span id="elapsed">—</span> <small>sim min</small></div></div><div class="stat"><div class="label">Time to arrival</div><div class="value"><span id="remaining">—</span> <small>sim min</small></div></div><div class="stat"><div class="label">Arrival change</div><div class="value"><span id="delta">—</span> <small>sim min</small></div></div></div>
 </section><aside><h2>Listen to the voyage</h2><p style="font-size:13px">The system monitors, decides, and navigates. You’re here to observe.</p><button class="audio" id="audio">Enable spoken advisories</button><p class="hint" id="audioHint">Browser audio permission only. Navigation is already autonomous. Uses your browser’s installed speech voice.</p><div class="event"><strong id="eventTitle">A change is approaching</strong><p id="eventText">At minute 12, a fictional whale zone appears. The ship will replan from its current position.</p></div><div class="label">Advisory transcript</div><div id="feed" class="feed" role="log" aria-live="polite"></div></aside></div>
-<footer><span>SIMULATION ONLY · Fictional ship, zones, and outcomes. No live data or real-world safety claims.<br>Dijkstra minimum travel time on a 1 km navigation graph; exact segment costs at zone boundaries.</span><span id="connection">Connecting…</span></footer>
+<footer><span id="disclaimer">SIMULATION ONLY · Fictional ship, zones, and outcomes. No live data or real-world safety claims.<br>Dijkstra minimum travel time on a 1 km navigation graph; exact segment costs at zone boundaries.</span><span id="connection">Connecting…</span></footer>
 </main>
 <script>
 const $=id=>document.getElementById(id), ns='http://www.w3.org/2000/svg';
@@ -32,10 +32,49 @@ const pt=p=>`${p[0]},${18-p[1]}`;
 function speak(item){if(!audio)return;spoken=item.id;const u=new SpeechSynthesisUtterance(item.text);const voices=speechSynthesis.getVoices();const local=voices.find(v=>v.localService&&v.lang.startsWith('en'));if(!local){$('audioHint').textContent='No installed English speech voice available. Read the advisory transcript.';return;}u.voice=local;u.rate=1.08;u.onerror=()=>{$('audioHint').textContent='Speech was unavailable or blocked. The advisory transcript remains visible.';};speechSynthesis.speak(u);spoken=item.id;}
 $('audio').onclick=()=>{audio=true;$('audio').textContent='Spoken advisories enabled';$('audio').disabled=true;if(state?.advisories.length){speechSynthesis.cancel();speak(state.advisories[state.advisories.length-1]);}};
 if(!('speechSynthesis' in window)){$('audio').disabled=true;$('audio').textContent='Speech unavailable in this browser';}else{speechSynthesis.getVoices();}
-function render(s){state=s;$('status').textContent={navigating:'Autonomous navigation active',arrived:'Simulated voyage complete',holding:'Simulated ship holding'}[s.status];$('elapsed').textContent=s.elapsed_min.toFixed(1);$('remaining').textContent=s.remaining_min===null?'—':s.remaining_min.toFixed(1);$('delta').textContent=s.impact?`${s.impact.arrival_change_min>=0?'+':''}${s.impact.arrival_change_min.toFixed(1)}`:'0.0';$('route').setAttribute('points',s.planned_route.map(pt).join(' '));$('old').setAttribute('points',s.old_route.map(pt).join(' '));$('ship').setAttribute('transform',`translate(${s.position[0]},${18-s.position[1]})`);
-$('zones').replaceChildren();for(const z of s.zones){const blocked=z.speed===null,newZone=z.name.includes('zone B');const color=blocked?'#657980':newZone?'#ffc97c':'#66cfb0';$('zones').append(el('polygon',{points:z.polygon.map(pt).join(' '),fill:color,'fill-opacity':blocked?'.42':'.12',stroke:color,'stroke-width':'.06','stroke-dasharray':blocked?'none':'.2 .15'}));const x=z.polygon[0][0]+.25,y=18-Math.max(...z.polygon.map(p=>p[1]))+.65;$('zones').append(el('text',{x,y,fill:color,'font-size':'.36'},blocked?'FICTIONAL LAND':`SIMULATED ZONE ${newZone?'B':'A'} · ${z.speed} km/h`));}
-$('markers').replaceChildren();for(const [p,label] of [[s.start,'START'],[s.destination,'DESTINATION']]){$('markers').append(el('circle',{cx:p[0],cy:18-p[1],r:'.17',fill:'#fff'}),el('text',{x:p[0]-1,y:18-p[1]+1,fill:'#b5ced7','font-size':'.4'},label));}
-if(s.event_done){$('eventTitle').textContent=s.status==='holding'?'Holding position':'New zone detected → route updated';$('eventText').textContent=s.impact?`At minute 12, replanned automatically. Saves ${s.impact.saved_vs_old_route_min.toFixed(1)} simulated minutes versus the previous route under the new limits.`:'No traversable route is available.';}
+function render(s){
+state=s;
+$('status').textContent={navigating:'Autonomous simulated navigation',arrived:'Simulated voyage complete',holding:'Simulated ship holding',waiting:'Waiting for eligible whale reports'}[s.status];
+$('elapsed').textContent=s.elapsed_min.toFixed(1);
+$('remaining').textContent=s.remaining_min===null?'—':s.remaining_min.toFixed(1);
+const delta=s.impact?.arrival_change_min;
+$('delta').textContent=delta==null?(s.impact?'—':'0.0'):`${delta>=0?'+':''}${delta.toFixed(1)}`;
+$('clockLabel').textContent=`1 second = ${(s.time_scale/60).toFixed(2)} simulated minutes`;
+$('route').setAttribute('points',s.planned_route.map(pt).join(' '));
+$('old').setAttribute('points',s.old_route.map(pt).join(' '));
+$('ship').setAttribute('transform',`translate(${s.position[0]},${18-s.position[1]})`);
+$('zones').replaceChildren();
+for(const z of s.zones){
+ const blocked=z.speed===null,buffer=z.name.includes('buffer'),newZone=z.name.includes('zone B');
+ const color=blocked?'#657980':buffer||newZone?'#ffc97c':'#66cfb0';
+ $('zones').append(el('polygon',{points:z.polygon.map(pt).join(' '),fill:color,'fill-opacity':blocked?'.42':'.12',stroke:color,'stroke-width':'.06','stroke-dasharray':blocked?'none':'.2 .15'}));
+ const x=z.polygon[0][0]+.25,y=18-Math.max(...z.polygon.map(p=>p[1]))+.65;
+ $('zones').append(el('text',{x,y,fill:color,'font-size':'.36'},blocked?'FICTIONAL LAND':buffer?`ASSUMED BUFFER · ${z.speed} km/h`:`SIMULATED ZONE ${newZone?'B':'A'} · ${z.speed} km/h`));
+}
+$('markers').replaceChildren();
+for(const [p,label] of [[s.start,'START'],[s.destination,'DESTINATION']]){
+ $('markers').append(el('circle',{cx:p[0],cy:18-p[1],r:'.17',fill:'#fff'}),el('text',{x:p[0]-1,y:18-p[1]+1,fill:'#b5ced7','font-size':'.4'},label));
+}
+$('sightings').replaceChildren();
+if(s.mode==='live'){
+ const f=s.live_feed;
+ $('modeBadge').textContent='LIVE REPORT FEED / SIMULATED NAVIGATION';
+ $('frameLabel').textContent=f?.center?`REPORT FRAME ${f.center[0].toFixed(3)}, ${f.center[1].toFixed(3)}`:'WAITING FOR REPORT FRAME';
+ $('coordinateLabel').textContent='PROJECTED REPORT LOCATIONS · FICTIONAL LAND · KM';
+ $('disclaimer').textContent='Live reports: Acartia and its data contributors. Ship, land, buffers, speed limits, and outcomes are simulated. Not for navigation. Report receipt age does not establish current whale location.';
+ $('eventTitle').textContent=`Acartia feed: ${f?.status || 'connecting'}`;
+ const reports=f?.reports||[];
+ $('eventText').textContent=`${reports.length} nearby reports. Assumed buffers: ${f?.radius_km||2} km, ${f?.speed_kmh||6} km/h. Last successful fetch: ${f?.last_success?new Date(f.last_success).toLocaleTimeString():'none'}. ${f?.error||'Reports expire by receipt age; observation timestamps have no explicit timezone.'}`;
+ let info=$('sourceInfo');
+ if(!info){info=document.createElement('div');info.id='sourceInfo';info.className='hint';$('eventText').after(info);}
+ info.replaceChildren();
+ const link=document.createElement('a');link.href='https://acartia.io/';link.textContent='Source: Acartia & contributors';link.style.color='var(--mint)';info.append(link);
+ for(const r of reports.slice(0,3)){const row=document.createElement('p');row.textContent=`${r.species}: received ${r.receipt_age_min.toFixed(0)} min ago; observed ${r.observed_raw} (source timezone unspecified).`;info.append(row);}
+ for(const r of reports){const dot=el('circle',{cx:r.position[0],cy:18-r.position[1],r:'.13',fill:'#ffc97c'});dot.append(el('title',{},`${r.species}; received ${r.received_utc}; observed ${r.observed_raw}`));$('sightings').append(dot);}
+}else if(s.event_done){
+ $('eventTitle').textContent=s.status==='holding'?'Holding position':'New zone detected → route updated';
+ $('eventText').textContent=s.impact?.saved_vs_old_route_min!=null?`At minute 12, replanned automatically. Saves ${s.impact.saved_vs_old_route_min.toFixed(1)} simulated minutes versus the previous route under the new limits.`:'No traversable route is available.';
+}
 for(const a of s.advisories){if(a.id>seen){const entry=document.createElement('div');entry.className='entry';const time=document.createElement('time');time.textContent=`SIM MIN ${a.minute.toFixed(1)} / ADVISORY ${String(a.id).padStart(2,'0')}`;entry.append(time,document.createTextNode(a.text));$('feed').prepend(entry);seen=a.id;}}
 if(audio){for(const a of s.advisories)if(a.id>spoken)speak(a);}
 }

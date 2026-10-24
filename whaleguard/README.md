@@ -1,7 +1,8 @@
 # WhaleGuard — two-hour hackathon demo
 
-All ships, waters, zones, advisories, and outcomes are fictional simulations.
-No live APIs, LLM routing, or real-world safety claims. Python 3.10+; no package
+Ships, land obstacles, speed limits, buffers, and navigation outcomes are simulated.
+Default demo mode is entirely fictional; optional live mode reads whale reports
+from Acartia. No LLM routing or real-world safety claims. Python 3.10+; no package
 installation required. Run from the repository root:
 
 ```sh
@@ -90,3 +91,60 @@ blocked tangencies/edges, speed-limited boundaries, slowing versus detouring,
 blocked/unreachable destinations, off-grid starts, movement through boundaries,
 current-position replanning, ETA comparisons, tick-size independence, arrival,
 and holding when no route exists.
+
+
+## Live whale sightings mode
+
+```sh
+python3 -m whaleguard --live
+```
+
+The read-only [Acartia recent-sightings endpoint](https://acartia.io/api/v1/sightings/current)
+is polled every 30 seconds. This endpoint is documented for experimentation without
+registration in [Acartia's contribution guide](https://github.com/Typehuman/SSEMMI/blob/main/CONTRIBUTING.md).
+Data attribution: **Acartia and its data contributors**. The demo exposes only
+species, report ID, position, receipt time, and the source's observation-time
+text; it does not send witness names or comments to the browser.
+
+- The ship waits for an eligible report before departing. The first successful
+  set of eligible reports establishes a fixed 30 × 18 km frame centered on its
+  newest report. Later reports do not shift that frame or teleport the ship.
+- Only records marked trusted by the provider and identified as whale species
+  are accepted. Coordinates and timestamps are validated, IDs deduplicated, and
+  future or old receipt timestamps rejected. The default receipt-age window is
+  six hours, measured in actual wall time, not accelerated simulation time.
+- **Receipt age is not observation age.** Acartia's `created` field has no explicit
+  timezone. It is displayed unchanged; no timezone or current whale position is
+  inferred. The explicit UTC offset in `ssemmi_date_added` governs receipt-age
+  filtering. Recently received reports can describe older observations.
+- Each nearby report produces a 12-sided, 2 km simulated buffer with an assumed
+  6 km/h speed limit. These are demo parameters, not legal restrictions or
+  validated biological models. The island and zone A remain fictional.
+- The map projects actual report coordinates into the local frame but contains
+  **no real coastline or navigation chart**. Never use it to operate a vessel.
+- New/changed/expired buffers automatically replan from the simulated ship's
+  current position and produce an advisory. Identical polls are quiet. No
+  hard-coded timed zone is injected in live mode.
+- Network calls have a timeout and size limit and run outside the simulation
+  lock. A failed fetch marks the feed unavailable and retains accepted reports
+  until their configured expiry. Absence from a subsequent snapshot does not
+  prematurely erase a report. Expiry removes a demo buffer; it does not assert
+  that an actual whale has left.
+- Polling does not guarantee that new reports will arrive during a presentation.
+  Use default fictional mode for the deterministic 49-second demonstration.
+- Live mode runs at 10 simulated seconds per actual second (roughly seven minutes
+  per voyage). `--time-scale 90` speeds it up; `--poll-seconds 15` polls faster
+  (minimum 10); `--report-age-hours 2` changes the receipt-age window.
+- Last successful fetch, feed availability, nearby receipt ages, observation-time
+  text, and attribution are visible beside the map. Restart to choose a new frame
+  or begin another voyage. Each server instance has one shared simulated ship.
+
+Run both offline suites:
+
+```sh
+python3 -m unittest tests.test_whaleguard tests.test_whaleguard_live -v
+```
+
+Live tests include the provider's actual JavaScript date format, future/old
+reports, malformed coordinates, duplicate IDs, fixed projection, outages,
+reconnects, expiry, redacted metadata, repeated replanning, and recovery from hold.

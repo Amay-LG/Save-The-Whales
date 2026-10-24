@@ -5,7 +5,9 @@
 Run `python3 -m whaleguard`, then open http://127.0.0.1:8765. No dependencies
 required beyond Python 3.10+. One fictional ship navigates and reroutes
 automatically, with a spectator map and optional spoken advisories.
-Everything is simulated; no live APIs or real-world safety claims.
+Use `python3 -m whaleguard --live` to adapt to Acartia whale reports. The ship,
+land, buffers, speed limits, and navigation outcomes remain simulated; no
+real-world safety claims.
 See [the demo guide](whaleguard/README.md) for setup, routing details,
 verification, and a four-person/two-hour work plan.
 
