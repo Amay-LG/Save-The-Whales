@@ -1,4 +1,15 @@
 # Save-The-Whales
+
+## WhaleGuard hackathon demonstration
+
+Run `python3 -m whaleguard`, then open http://127.0.0.1:8765. No dependencies
+required beyond Python 3.10+. One fictional ship navigates and reroutes
+automatically, with a spectator map and optional spoken advisories.
+Everything is simulated; no live APIs or real-world safety claims.
+See [the demo guide](whaleguard/README.md) for setup, routing details,
+verification, and a four-person/two-hour work plan.
+
+## Original simulator scaffold
 We're gonna save the whales.
 
 A whale-ship strike simulator and testbed for real-time alert and detour advisors in the Santa Barbara Channel. The design is in `my-artifacts/simulation_implementation_plan_v2.md`; "§" references in the code point to that plan.
