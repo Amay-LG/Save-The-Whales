@@ -1,0 +1,9 @@
+my-artifacts/
+runs/*
+!runs/.gitkeep
+!runs/README.md
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/README.md
+__pycache__/
+.pytest_cache/

@@ -1,0 +1,4 @@
+{"type": "FeatureCollection", "features": [
+  {"type": "Feature", "properties": {"name": "TODO_mainland"}, "geometry": {"type": "Polygon", "coordinates": [[]]}},
+  {"type": "Feature", "properties": {"name": "TODO_santa_cruz_island"}, "geometry": {"type": "Polygon", "coordinates": [[]]}}
+]}

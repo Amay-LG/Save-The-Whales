@@ -1,0 +1,4 @@
+{"lanes": [
+  {"id": "northbound", "waypoints": [{"lat": 0, "lon": 0}], "entry_gate": {"lat": 0, "lon": 0}, "exit_gate": {"lat": 0, "lon": 0}},
+  {"id": "southbound", "waypoints": [{"lat": 0, "lon": 0}], "entry_gate": {"lat": 0, "lon": 0}, "exit_gate": {"lat": 0, "lon": 0}}
+], "_todo": "fill from NOAA chart 18720 / TSS coordinates"}
