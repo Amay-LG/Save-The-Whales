@@ -135,7 +135,7 @@ def test_preview_runs_and_rerender_does_not_run_again():
     at=AppTest.from_file(str(Path(__file__).parent/'ui_preview.py'),default_timeout=20).run()
     assert not at.exception
     assert not any('<section class="save-hero">' in code.value for code in at.code)
-    next(b for b in at.button if b.label=='Run paired comparison').click().run()
+    next(b for b in at.button if b.label=='Compare routes').click().run()
     assert not at.exception
     run_id=at.session_state['dashboard_pair']['run_id']
     at.run()
@@ -151,7 +151,7 @@ def test_production_empty_state_is_explicit():
     # Missing teammate implementations disable Run rather than invoking fixtures.
     from app import production_services
     if production_services()['integration_issues']:
-        assert next(b for b in at.button if b.label=='Run paired comparison').disabled
+        assert next(b for b in at.button if b.label=='Compare routes').disabled
 
 
 def test_factory_failure_is_a_failed_policy_not_a_hidden_fallback():

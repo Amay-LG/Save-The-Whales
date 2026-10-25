@@ -50,9 +50,9 @@ def render_dashboard(services):
             st.write('The dashboard is ready for these interfaces. Production does not silently replace them with preview services.')
             st.code('\n'.join(missing), language='text')
     with st.sidebar:
-        st.subheader('Experiment setup')
-        st.caption('Choose inputs before running. Source capture never moves simulated ships.')
-        with st.expander('01 · Routes & land', expanded=not bool(bundle)):
+        st.subheader('Your voyage')
+        st.caption('Choose a situation. Compare the original course with whale-aware advice.')
+        with st.expander('Data & capture', expanded=not bool(bundle)):
             land_path = st.text_input('Regional land GeoJSON', value='data/land/santa_barbara.geojson')
             bundle_path = st.text_input('AIS route bundle', value='data/ais/routes.json')
             if st.button('Load route cache', disabled=not all(k in services for k in ('load_land','load_route_bundle'))):
@@ -94,17 +94,18 @@ def render_dashboard(services):
                     st.error(f'ROUTE_PREPARATION_FAILED · {type(exc).__name__}')
             if bundle:
                 st.download_button('Download frozen route bundle', json.dumps(bundle, indent=2), 'route_bundle.json', 'application/json')
-        st.markdown('**02 · Scenario**')
-        preset = st.selectbox('Controlled case', PRESETS, format_func=lambda x: x.replace('_',' ').title())
+        st.markdown('**What’s happening?**')
+        preset = st.selectbox('Situation', PRESETS, format_func=lambda x: {'crossing':'A whale crosses the route','no_threat':'A quiet passage','storm_detour':'A storm near the route','land_blocked_side':'A route near the coast'}[x])
         route_ids = [r['route_id'] for r in (bundle or {}).get('routes', [])]
-        selected = st.multiselect('Recorded route segments', route_ids, default=route_ids[:1])
-        seed = st.number_input('Random seed', min_value=0, max_value=2147483647, value=0, step=1)
+        selected = st.multiselect('Ship route', route_ids, default=route_ids[:1], format_func=lambda r: 'Demo passage (simulated)' if preview else r, help='Choose one or more recorded route segments for the simulated ships.')
+        with st.expander('Advanced settings'):
+            seed = st.number_input('Repeatable scenario seed', min_value=0, max_value=2147483647, value=0, step=1, help='Use the same number to reproduce a run.')
         c1,c2 = st.columns(2)
-        ships = c1.number_input('Ships', 1, 10, 5)
+        ships = c1.number_input('Simulated ships', 1, 10, 5)
         whales = c2.number_input('Whales', 0, 30, 20)
-        st.caption('All ships, whales, and sightings in the run are simulated.')
+        st.caption('Ships, whales, and weather are simulated.')
         settings = {'preset':preset,'route_ids':selected,'seed':int(seed),'ship_count':int(ships),'whale_count':int(whales)}
-        with st.expander('03 · Simulated weather', expanded=preset=='storm_detour'):
+        with st.expander('Weather', expanded=preset=='storm_detour'):
             enabled = st.checkbox('Include a storm zone', value=preset=='storm_detour')
             settings['storm_enabled'] = enabled
             settings['storm_severity'] = st.slider('Severity', 0., 1., .8, .05)
@@ -119,7 +120,7 @@ def render_dashboard(services):
                 settings['storm_height_m'] = st.number_input('Height (m)', 100, 20000, 800, 100)
         issues = readiness_issues(bundle, land)
         can_run = bool(selected) and not missing and (preview or not issues)
-        clicked = st.button('Run paired comparison', type='primary', width="stretch", disabled=not can_run)
+        clicked = st.button('Compare routes', type='primary', width="stretch", disabled=not can_run)
         if clicked:
             with st.spinner('Freezing inputs · running independent baseline and advisor worlds…'):
                 try:
@@ -131,7 +132,7 @@ def render_dashboard(services):
                         state[prefix+'saved'] = str(save_comparison(pair))
                 except Exception as exc:
                     st.error(f'RUN_FAILED · {type(exc).__name__}: {exc}')
-        st.caption('One run per click. UI refresh does not rerun policy decisions.')
+        st.caption('Same conditions. Two courses. See the difference in exposure and arrival time.')
     pair = state.get(prefix+'pair')
     inputs = state.get(prefix+'inputs')
     if not pair:
