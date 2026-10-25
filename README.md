@@ -31,14 +31,15 @@ comparison numbers are canned synthetic UI data, not measured planner results.
 It proves presentation and callable wiring only. The fixture validator rejects
 production use; it is not an always-accept substitute.
 
-## Ocean introduction and impact context
+## Product surface and impact context
 
-The front page includes an original local SVG animation comparing an illustrative
-usual route with a whale-aware route. It is explanatory, not a routing algorithm
-or a measured simulation result. No artwork from the reference site is copied.
-The impact section links to Blue Whales and Blue Skies and the Marine Mammal
-Commission; program statistics are explicitly separate from this demo’s results.
-The preview flag remains visible in a concise caption with expandable details.
+The front page uses a single subtle local whale silhouette behind the heading.
+There are no animated or interactive promotional graphics. Three compact impact
+sections explain speed, visibility, and decision tradeoffs using linked NOAA,
+Marine Mammal Commission, and Blue Whales and Blue Skies sources. Unsupported
+universal mortality, unreported-strike, and manual-compliance numbers are not
+presented as facts. Context is explicitly separate from simulated model results.
+Preview status remains visible in one line with expandable details.
 
 ## Real-data walkthrough
 

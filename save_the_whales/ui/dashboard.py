@@ -7,18 +7,22 @@ import streamlit as st
 from .scenarios import load_config, readiness_issues, PRESETS
 from .comparison import save_comparison
 from .plots import map_data, build_deck, assessment_rows
-from .impact import render_story, render_facts
+from .impact import render_hero, render_facts
 
 CSS = '''<style>
 [data-testid="stAppViewContainer"]{background:#092433;color:#edf9fc}
 [data-testid="stSidebar"]{background:#092b3b;border-right:1px solid #285366}
-.block-container{padding-top:2rem;max-width:1600px}
-h1{font-weight:550!important;letter-spacing:-1.5px!important;font-size:2.5rem!important}
+.block-container{padding-top:4.5rem!important;max-width:1600px}
+[data-testid="stHeader"]{background:#092433!important;height:3rem;border-bottom:1px solid #234658}
+[data-testid="stToolbar"]{display:none!important}
+[data-testid="stSidebarUserContent"]{padding-top:1rem}
+html{scroll-padding-top:4rem}
+h1{font-weight:650!important;letter-spacing:-1.8px!important;font-size:2.5rem!important;font-family:ui-rounded,"Avenir Next",system-ui,sans-serif!important}
 h2,h3{letter-spacing:-.5px} [data-testid="stMetric"]{background:linear-gradient(140deg,#123f50,#0c2e40);border:1px solid #316075;border-radius:9px;padding:17px}
 [data-testid="stMetricLabel"]{color:#a6bec9;font-size:12px}
 [data-testid="stMetricValue"]{font-size:1.9rem;color:#8df1c5}
 .stButton>button[kind="primary"]{background:#8df1c5;color:#08221b;border:0;font-weight:650}
-.stButton>button{border-radius:6px}.eyebrow{color:#8df1c5;letter-spacing:2px;font-size:11px;margin-bottom:12px}
+.stButton>button{border-radius:18px;padding:.5rem 1rem} [data-testid="stExpander"]{border-radius:14px} [data-testid="stDeckGlJsonChart"]{border-radius:16px;overflow:hidden}.eyebrow{color:#8df1c5;letter-spacing:2px;font-size:11px;margin-bottom:12px}
 .lead{color:#a8c1cd;font-size:15px;line-height:1.7;max-width:850px}.legend{color:#aac1cd;font-size:12px;line-height:2}
 .sectionline{border-top:1px solid #2b586d;margin:20px 0}.notice{background:#152d36;padding:18px;border:1px solid #36515d;border-radius:8px;color:#bcd1dc}
 .ocean-wave{height:32px;margin:18px 0 16px;opacity:.65}
@@ -37,12 +41,9 @@ def render_dashboard(services):
         state[prefix+'bundle'] = deepcopy(services.get('initial_bundle'))
         state[prefix+'land'] = deepcopy(services.get('initial_land'))
     bundle, land = state[prefix+'bundle'], state[prefix+'land']
-    st.markdown('<div class="eyebrow">SANTA BARBARA / AN OCEAN WE SHARE</div>', unsafe_allow_html=True)
-    st.title('Save the Whales')
-    st.markdown('<div class="lead">A small change of course. A little more room for whales.</div>', unsafe_allow_html=True)
-    render_story()
+    render_hero()
     if preview:
-        st.caption('Illustrative preview · synthetic inputs and canned comparison outcomes')
+        st.caption('Demo preview · synthetic data and illustrative outcomes')
         with st.expander('About this preview'):
             st.write('All route, land, decision, and outcome data in this preview are synthetic fixtures. It demonstrates the interface only; it does not verify real AIS integration or a working planner.')
     missing = services.get('integration_issues', [])
