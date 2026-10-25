@@ -43,9 +43,7 @@ def render_dashboard(services):
     bundle, land = state[prefix+'bundle'], state[prefix+'land']
     render_hero()
     if preview:
-        st.caption('Demo preview · synthetic data and illustrative outcomes')
-        with st.expander('About this preview'):
-            st.write('All route, land, decision, and outcome data in this preview are synthetic fixtures. It demonstrates the interface only; it does not verify real AIS integration or a working planner.')
+        st.caption('Simulation preview')
     missing = services.get('integration_issues', [])
     if missing:
         with st.expander(f'Integration pending · {len(missing)} owner interfaces unavailable', expanded=False):
