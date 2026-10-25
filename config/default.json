@@ -30,5 +30,98 @@
     "default_beam_m": 40,
     "clearance_margin_m": 100,
     "min_speed_knots": 6
+  },
+
+  "simulation": {
+    "dt_s": 30,
+    "decision_dt_s": 60,
+    "duration_s": 7200,
+    "drain_max_s": 1800,
+    "wall_limit_s": 30,
+    "max_voyages": 10,
+    "max_whales": 30,
+    "max_duration_s": 21600,
+    "max_drain_s": 1800,
+    "frame_every_s": 60,
+    "max_frames": 400,
+    "max_events": 2000,
+    "max_decisions": 300,
+    "record_analyst_truth": true,
+    "whale_speed_mps": 1.0,
+    "whale_speed_range_mps": [0.5, 2.0],
+    "whale_turn_every_s": 600,
+    "whale_turn_sd_deg": 30,
+    "whale_surface_s": 120,
+    "whale_deep_s": 480
+  },
+
+  "sensors": {
+    "sample_dt_s": 60,
+    "max_reports": 50,
+    "max_detection_age_s": 1800,
+    "observers": [
+      {"sensor_id": "lookout", "kind": "SHIP_LOOKOUT", "range_m": 4000, "p_detect": 0.8,
+       "position_error_m": 150, "delay_min_s": 0, "delay_max_s": 60}
+    ]
+  },
+
+  "response": {
+    "response_lag_s": 30,
+    "compliance": 1.0
+  },
+
+  "metrics": {
+    "sigma_eval_m": 300,
+    "encounter_enter_m": 500,
+    "encounter_exit_m": 750,
+    "encounter_exit_dwell_s": 120,
+    "whale_body_radius_m": 12.5
+  },
+
+  "planner": {
+    "lookahead_s": 900,
+    "max_rejoin_s": 3600,
+    "offsets_m": [500, 1000],
+    "max_detour_waypoints": 8,
+    "max_geometries": 4,
+    "max_speeds": 3,
+    "max_candidates": 12,
+    "alt_speeds_knots": [10, 8],
+    "bypass_half_length_m": 600,
+    "rejoin_taper_m": 500,
+    "min_lead_m": 200,
+    "clearance_margin_m": 100,
+    "min_speed_knots": 6,
+    "max_path_ratio": 1.5,
+    "max_added_delay_s": 900,
+    "w_whale": 5,
+    "w_weather": 2,
+    "w_delay": 1,
+    "w_distance": 0.5,
+    "w_change": 0.1,
+    "min_objective_improvement": 0.01,
+    "min_whale_improvement": 0.05,
+    "whale_risk_tolerance": 0.01,
+    "cooldown_s": 60,
+    "max_reports": 50,
+    "max_detection_age_s": 1800,
+    "drift_mps": 1.5,
+    "sigma_min_m": 50,
+    "watch_distance_m": 3000,
+    "weather_trigger_normalized": 0.05,
+    "lease_margin_s": 60,
+    "max_planned_ships": 5,
+    "stale_issue_s": 120,
+    "progress_tolerance_m": 1.0
+  },
+
+  "scenarios": {
+    "presets_dir": "config/scenarios",
+    "start_at": "2026-07-01T12:00:00Z",
+    "default_voyages": 5,
+    "default_whales": 20,
+    "voyage_spacing_s": 600,
+    "background_margin_m": 5000,
+    "max_storm_zones": 3
   }
 }

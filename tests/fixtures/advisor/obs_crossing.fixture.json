@@ -1,0 +1,180 @@
+{
+ "schema_version": "2.0",
+ "now": "2026-07-01T12:01:00Z",
+ "decision_interval_min": 1.0,
+ "bbox": {
+  "lat_min": 33.8,
+  "lat_max": 34.6,
+  "lon_min": -120.5,
+  "lon_max": -119.0
+ },
+ "static": {
+  "land": {
+   "map_id": "fixture-land-far",
+   "source": "SYNTHETIC_FIXTURE toy rectangle (same shape moved ~11 km north, away from the recipe route)",
+   "sha256": "cad03872a643520136aee9881bc59429a0c056aa87de48eaa075797be034b250",
+   "validated": true,
+   "fixture_only": true,
+   "bbox": {
+    "lat_min": 33.8,
+    "lat_max": 34.6,
+    "lon_min": -120.5,
+    "lon_max": -119.0
+   },
+   "rings": [
+    [
+     {
+      "lat": 34.304,
+      "lon": -120.075
+     },
+     {
+      "lat": 34.304,
+      "lon": -120.055
+     },
+     {
+      "lat": 34.316,
+      "lon": -120.055
+     },
+     {
+      "lat": 34.316,
+      "lon": -120.075
+     }
+    ]
+   ],
+   "issues": [],
+   "simplifications": [],
+   "provenance": {
+    "map_id": "fixture-land-far",
+    "source": "SYNTHETIC_FIXTURE toy rectangle (same shape moved ~11 km north, away from the recipe route)",
+    "fixture_only": true,
+    "bbox": {
+     "lat_min": 33.8,
+     "lat_max": 34.6,
+     "lon_min": -120.5,
+     "lon_max": -119.0
+    },
+    "research_only": true,
+    "note": "Explicitly fixture-only test geometry; not real or verified coastline."
+   },
+   "geojson": {
+    "type": "FeatureCollection",
+    "provenance": {
+     "map_id": "fixture-land-far",
+     "source": "SYNTHETIC_FIXTURE toy rectangle (same shape moved ~11 km north, away from the recipe route)",
+     "fixture_only": true,
+     "bbox": {
+      "lat_min": 33.8,
+      "lat_max": 34.6,
+      "lon_min": -120.5,
+      "lon_max": -119.0
+     },
+     "research_only": true,
+     "note": "Explicitly fixture-only test geometry; not real or verified coastline."
+    },
+    "features": [
+     {
+      "type": "Feature",
+      "properties": {
+       "name": "land-far"
+      },
+      "geometry": {
+       "type": "Polygon",
+       "coordinates": [
+        [
+         [
+          -120.075,
+          34.304
+         ],
+         [
+          -120.055,
+          34.304
+         ],
+         [
+          -120.055,
+          34.316
+         ],
+         [
+          -120.075,
+          34.316
+         ],
+         [
+          -120.075,
+          34.304
+         ]
+        ]
+       ]
+      }
+     }
+    ]
+   }
+  },
+  "weather": {
+   "source": "SIMULATED",
+   "coverage_start_s": 0,
+   "coverage_end_s": 12600,
+   "zones": []
+  }
+ },
+ "ships": [
+  {
+   "ship_id": "sim:999000001:v1",
+   "lat": 34.2,
+   "lon": -120.09395871333713,
+   "sog_knots": 18.0,
+   "cog_deg": 90.0,
+   "length_m": 300.0,
+   "beam_m": 40.0,
+   "service_speed_knots": 18.0,
+   "original_route": [
+    {
+     "lat": 34.2,
+     "lon": -120.1
+    },
+    {
+     "lat": 34.2,
+     "lon": -120.075
+    },
+    {
+     "lat": 34.2,
+     "lon": -120.05
+    },
+    {
+     "lat": 34.2,
+     "lon": -120.025
+    }
+   ],
+   "current_route": [
+    {
+     "lat": 34.2,
+     "lon": -120.075
+    },
+    {
+     "lat": 34.2,
+     "lon": -120.05
+    },
+    {
+     "lat": 34.2,
+     "lon": -120.025
+    }
+   ],
+   "active_command": null,
+   "baseline_progress_index": 0,
+   "latest_revision": 0,
+   "last_action_at": null,
+   "incident_budget": null
+  }
+ ],
+ "whale_detections": [
+  {
+   "detection_id": "rpt-fixture-0001",
+   "lat": 34.2,
+   "lon": -120.065,
+   "position_error_m": 100.0,
+   "observed_at": "2026-07-01T12:00:00Z",
+   "reported_at": "2026-07-01T12:00:30Z",
+   "source": "SYNTHETIC_FIXTURE"
+  }
+ ],
+ "decision_id": "fixture:d0002",
+ "sim_time_s": 60.0
+}

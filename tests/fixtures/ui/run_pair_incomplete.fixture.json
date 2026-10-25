@@ -1,0 +1,2520 @@
+{
+ "advisor": {
+  "_fixture": "SYNTHETIC_FIXTURE canned UI result; not a real run",
+  "decisions": [
+   {
+    "actions": [],
+    "assessments": [
+     {
+      "costs": {
+       "assessed_factors": [
+        "F1_LAND_CLEARANCE",
+        "F2_WHALE_PROXIMITY",
+        "F3_WEATHER",
+        "F4_SIZE_SPEED",
+        "F5_DELAY",
+        "F6_DISTANCE",
+        "F7_FORWARD_REJOIN",
+        "F8_INPUT_QUALITY",
+        "F9_ROUTE_STABILITY",
+        "F10_COMPUTE_BUDGET"
+       ],
+       "cpa": {
+        "cpa_m": null,
+        "cpa_time_s": null,
+        "detection_id": null,
+        "sigma_m": null
+       },
+       "evidence": {
+        "capped": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "not_due": 0,
+        "received": 0,
+        "stale": 0,
+        "used": 0
+       },
+       "screen_horizon_s": 900.0,
+       "unmodeled_factors": [
+        "F11_SHIP_SHIP",
+        "F12_COLREG_TSS_LEGALITY",
+        "F13_DEPTH_DRAFT",
+        "F14_REALISTIC_DYNAMICS"
+       ],
+       "weather_exposure_s": 0.0,
+       "whale_risk": 0.0
+      },
+      "reason_codes": [
+       "NO_FEASIBLE_ROUTE",
+       "WHALE_WATCH"
+      ],
+      "rejected_candidates": [],
+      "selected_path": [],
+      "ship_id": "sim:999000001:v1",
+      "status": "NO_FEASIBLE_ROUTE"
+     }
+    ],
+    "decision_id": "crossing-s0-a5081684ea-advisor:d0001"
+   },
+   {
+    "actions": [],
+    "assessments": [
+     {
+      "costs": {
+       "added_delay_s": 82.16057669735136,
+       "assessed_factors": [
+        "F1_LAND_CLEARANCE",
+        "F2_WHALE_PROXIMITY",
+        "F3_WEATHER",
+        "F4_SIZE_SPEED",
+        "F5_DELAY",
+        "F6_DISTANCE",
+        "F7_FORWARD_REJOIN",
+        "F8_INPUT_QUALITY",
+        "F9_ROUTE_STABILITY",
+        "F10_COMPUTE_BUDGET"
+       ],
+       "candidates_evaluated": 12,
+       "contributions": {
+        "change": 0.1,
+        "delay": 0.18819006841289826,
+        "distance": 0.09409503420644907,
+        "weather": 0.0,
+        "whale": 0.5648856497716293
+       },
+       "cpa": {
+        "cpa_m": 992.8151903779791,
+        "cpa_time_s": 496.43245206752,
+        "detection_id": "rpt-d0c5af34d807",
+        "sigma_m": 751.3332508268111
+       },
+       "evidence": {
+        "capped": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "not_due": 0,
+        "received": 1,
+        "stale": 0,
+        "used": 1
+       },
+       "extra_distance_m": 760.8069402174733,
+       "objective": 0.9471707523909766,
+       "reference": {
+        "basis": "CURRENT_PLAN_TO_ENDPOINT",
+        "reference_distance_m": 4042.75818928035,
+        "reference_eta_s": 436.5829578056533,
+        "rejoin_route_index": 2
+       },
+       "unmodeled_factors": [
+        "F11_SHIP_SHIP",
+        "F12_COLREG_TSS_LEGALITY",
+        "F13_DEPTH_DRAFT",
+        "F14_REALISTIC_DYNAMICS"
+       ],
+       "weather_cost_normalized": 0.0,
+       "weather_exposure_s": 0.0,
+       "whale_risk": 0.11297712995432585
+      },
+      "reason_codes": [
+       "NO_FEASIBLE_ROUTE",
+       "WHALE_WATCH"
+      ],
+      "rejected_candidates": [
+       {
+        "candidate_id": "DOGLEG_RIGHT@18",
+        "detour_waypoints": [
+         {
+          "lat": 34.19550339197041,
+          "lon": -120.0700902789462
+         },
+         {
+          "lat": 34.19550339197041,
+          "lon": -120.05704214360523
+         }
+        ],
+        "kind": "DOGLEG_RIGHT",
+        "objective": 1.1968277908060803,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 18.0
+       },
+       {
+        "candidate_id": "CURRENT@10",
+        "detour_waypoints": [],
+        "kind": "CURRENT",
+        "objective": 1.2336434222229062,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 10.0
+       },
+       {
+        "candidate_id": "DOGLEG_RIGHT@10",
+        "detour_waypoints": [
+         {
+          "lat": 34.19550339197041,
+          "lon": -120.0700902789462
+         },
+         {
+          "lat": 34.19550339197041,
+          "lon": -120.05704214360523
+         }
+        ],
+        "kind": "DOGLEG_RIGHT",
+        "objective": 1.297863279895653,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 10.0
+       },
+       {
+        "candidate_id": "DOGLEG_LEFT@10",
+        "detour_waypoints": [
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.0700902789462
+         },
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.05704214360523
+         }
+        ],
+        "kind": "DOGLEG_LEFT",
+        "objective": 1.3302258799174618,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 10.0
+       },
+       {
+        "candidate_id": "CURRENT@8",
+        "detour_waypoints": [],
+        "kind": "CURRENT",
+        "objective": 1.5257097615376074,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 8.0
+       },
+       {
+        "candidate_id": "DOGLEG_WIDE@10",
+        "detour_waypoints": [
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.0700902789462
+         },
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.05704214360523
+         }
+        ],
+        "kind": "DOGLEG_WIDE",
+        "objective": 1.5398407827057559,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 10.0
+       },
+       {
+        "candidate_id": "DOGLEG_LEFT@18",
+        "detour_waypoints": [
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.0700902789462
+         },
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.05704214360523
+         }
+        ],
+        "kind": "DOGLEG_LEFT",
+        "objective": 1.5477971993466697,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 18.0
+       },
+       {
+        "candidate_id": "DOGLEG_RIGHT@8",
+        "detour_waypoints": [
+         {
+          "lat": 34.19550339197041,
+          "lon": -120.0700902789462
+         },
+         {
+          "lat": 34.19550339197041,
+          "lon": -120.05704214360523
+         }
+        ],
+        "kind": "DOGLEG_RIGHT",
+        "objective": 1.6552361168222465,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 8.0
+       },
+       {
+        "candidate_id": "DOGLEG_LEFT@8",
+        "detour_waypoints": [
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.0700902789462
+         },
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.05704214360523
+         }
+        ],
+        "kind": "DOGLEG_LEFT",
+        "objective": 1.6672536539469116,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 8.0
+       },
+       {
+        "candidate_id": "DOGLEG_WIDE@8",
+        "detour_waypoints": [
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.0700902789462
+         },
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.05704214360523
+         }
+        ],
+        "kind": "DOGLEG_WIDE",
+        "objective": 1.9920716477662954,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 8.0
+       }
+      ],
+      "selected_path": [],
+      "ship_id": "sim:999000001:v1",
+      "status": "NO_FEASIBLE_ROUTE"
+     }
+    ],
+    "decision_id": "crossing-s0-a5081684ea-advisor:d0002"
+   },
+   {
+    "actions": [],
+    "assessments": [
+     {
+      "costs": {
+       "added_delay_s": 1.1368683772161603e-13,
+       "assessed_factors": [
+        "F1_LAND_CLEARANCE",
+        "F2_WHALE_PROXIMITY",
+        "F3_WEATHER",
+        "F4_SIZE_SPEED",
+        "F5_DELAY",
+        "F6_DISTANCE",
+        "F7_FORWARD_REJOIN",
+        "F8_INPUT_QUALITY",
+        "F9_ROUTE_STABILITY",
+        "F10_COMPUTE_BUDGET"
+       ],
+       "candidates_evaluated": 12,
+       "contributions": {
+        "change": 0.0,
+        "delay": 1.607937875297115e-16,
+        "distance": 0.0,
+        "weather": 0.0,
+        "whale": 0.7328833777474159
+       },
+       "cpa": {
+        "cpa_m": 806.9899854795312,
+        "cpa_time_s": 503.58506599338057,
+        "detection_id": "rpt-dea41003899e",
+        "sigma_m": 672.8501684905723
+       },
+       "evidence": {
+        "capped": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "not_due": 0,
+        "received": 2,
+        "stale": 0,
+        "used": 2
+       },
+       "extra_distance_m": 0.0,
+       "objective": 0.732883377747416,
+       "reference": {
+        "basis": "CURRENT_PLAN_TO_ENDPOINT",
+        "reference_distance_m": 6547.144224136391,
+        "reference_eta_s": 707.0350134056577,
+        "rejoin_route_index": 3
+       },
+       "unmodeled_factors": [
+        "F11_SHIP_SHIP",
+        "F12_COLREG_TSS_LEGALITY",
+        "F13_DEPTH_DRAFT",
+        "F14_REALISTIC_DYNAMICS"
+       ],
+       "weather_cost_normalized": 0.0,
+       "weather_exposure_s": 0.0,
+       "whale_risk": 0.14657667554948317
+      },
+      "reason_codes": [
+       "NO_FEASIBLE_ROUTE",
+       "WHALE_WATCH"
+      ],
+      "rejected_candidates": [
+       {
+        "candidate_id": "CURRENT@8",
+        "detour_waypoints": [
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.0700902789462
+         },
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.05704214360523
+         }
+        ],
+        "kind": "CURRENT",
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 8.0
+       },
+       {
+        "candidate_id": "DOGLEG_WIDE@18",
+        "detour_waypoints": [
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.0680028405107
+         },
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.05495470516973
+         }
+        ],
+        "kind": "DOGLEG_WIDE",
+        "objective": 0.5572235399074412,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 18.0
+       },
+       {
+        "candidate_id": "DOGLEG_WIDE@10",
+        "detour_waypoints": [
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.0680028405107
+         },
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.05495470516973
+         }
+        ],
+        "kind": "DOGLEG_WIDE",
+        "objective": 0.9847844706464399,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 10.0
+       },
+       {
+        "candidate_id": "DOGLEG_LEFT@10",
+        "detour_waypoints": [
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.0680028405107
+         },
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.05495470516973
+         }
+        ],
+        "kind": "DOGLEG_LEFT",
+        "objective": 1.0105370603810195,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 10.0
+       },
+       {
+        "candidate_id": "RETURN@10",
+        "detour_waypoints": [],
+        "kind": "RETURN",
+        "objective": 1.0233742655929141,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 10.0
+       },
+       {
+        "candidate_id": "CURRENT@10",
+        "detour_waypoints": [
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.0700902789462
+         },
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.05704214360523
+         }
+        ],
+        "kind": "CURRENT",
+        "objective": 1.1194797998934678,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 10.0
+       },
+       {
+        "candidate_id": "RETURN@8",
+        "detour_waypoints": [],
+        "kind": "RETURN",
+        "objective": 1.2493261250160588,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 8.0
+       },
+       {
+        "candidate_id": "DOGLEG_LEFT@8",
+        "detour_waypoints": [
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.0680028405107
+         },
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.05495470516973
+         }
+        ],
+        "kind": "DOGLEG_LEFT",
+        "objective": 1.2616998658604077,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 8.0
+       },
+       {
+        "candidate_id": "DOGLEG_WIDE@8",
+        "detour_waypoints": [
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.0680028405107
+         },
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.05495470516973
+         }
+        ],
+        "kind": "DOGLEG_WIDE",
+        "objective": 1.3236974738558904,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 8.0
+       },
+       {
+        "candidate_id": "DOGLEG_LEFT@18",
+        "detour_waypoints": [
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.0680028405107
+         },
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.05495470516973
+         }
+        ],
+        "kind": "DOGLEG_LEFT",
+        "objective": 1.4713126770024954,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 18.0
+       },
+       {
+        "candidate_id": "RETURN@18",
+        "detour_waypoints": [],
+        "kind": "RETURN",
+        "objective": 1.8536252043268178,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 18.0
+       }
+      ],
+      "selected_path": [],
+      "ship_id": "sim:999000001:v1",
+      "status": "NO_FEASIBLE_ROUTE"
+     }
+    ],
+    "decision_id": "crossing-s0-a5081684ea-advisor:d0003"
+   },
+   {
+    "actions": [],
+    "assessments": [
+     {
+      "costs": {
+       "added_delay_s": 1.1368683772161603e-13,
+       "assessed_factors": [
+        "F1_LAND_CLEARANCE",
+        "F2_WHALE_PROXIMITY",
+        "F3_WEATHER",
+        "F4_SIZE_SPEED",
+        "F5_DELAY",
+        "F6_DISTANCE",
+        "F7_FORWARD_REJOIN",
+        "F8_INPUT_QUALITY",
+        "F9_ROUTE_STABILITY",
+        "F10_COMPUTE_BUDGET"
+       ],
+       "candidates_evaluated": 12,
+       "contributions": {
+        "change": 0.0,
+        "delay": 1.7570430558805566e-16,
+        "distance": 0.0,
+        "weather": 0.0,
+        "whale": 0.7845846987297278
+       },
+       "cpa": {
+        "cpa_m": 743.720069103413,
+        "cpa_time_s": 512.0859873689457,
+        "detection_id": "rpt-15a353684d41",
+        "sigma_m": 596.5699442269383
+       },
+       "evidence": {
+        "capped": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "not_due": 0,
+        "received": 3,
+        "stale": 0,
+        "used": 3
+       },
+       "extra_distance_m": 0.0,
+       "objective": 0.784584698729728,
+       "reference": {
+        "basis": "CURRENT_PLAN_TO_ENDPOINT",
+        "reference_distance_m": 5991.544224137269,
+        "reference_eta_s": 647.0350134057525,
+        "rejoin_route_index": 3
+       },
+       "unmodeled_factors": [
+        "F11_SHIP_SHIP",
+        "F12_COLREG_TSS_LEGALITY",
+        "F13_DEPTH_DRAFT",
+        "F14_REALISTIC_DYNAMICS"
+       ],
+       "weather_cost_normalized": 0.0,
+       "weather_exposure_s": 0.0,
+       "whale_risk": 0.15691693974594556
+      },
+      "reason_codes": [
+       "NO_FEASIBLE_ROUTE",
+       "WHALE_WATCH"
+      ],
+      "rejected_candidates": [
+       {
+        "candidate_id": "DOGLEG_WIDE@18",
+        "detour_waypoints": [
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.06696011408222
+         },
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.05391197874125
+         }
+        ],
+        "kind": "DOGLEG_WIDE",
+        "objective": 0.5481741809791122,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 18.0
+       },
+       {
+        "candidate_id": "DOGLEG_WIDE@10",
+        "detour_waypoints": [
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.06696011408222
+         },
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.05391197874125
+         }
+        ],
+        "kind": "DOGLEG_WIDE",
+        "objective": 0.9716859833379113,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 10.0
+       },
+       {
+        "candidate_id": "DOGLEG_LEFT@10",
+        "detour_waypoints": [
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.06696011408222
+         },
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.05391197874125
+         }
+        ],
+        "kind": "DOGLEG_LEFT",
+        "objective": 1.0379773206985479,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 10.0
+       },
+       {
+        "candidate_id": "RETURN@10",
+        "detour_waypoints": [],
+        "kind": "RETURN",
+        "objective": 1.0709324216980969,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 10.0
+       },
+       {
+        "candidate_id": "CURRENT@10",
+        "detour_waypoints": [
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.0700902789462
+         },
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.05704214360523
+         }
+        ],
+        "kind": "CURRENT",
+        "objective": 1.1344553259469636,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 10.0
+       },
+       {
+        "candidate_id": "DOGLEG_LEFT@8",
+        "detour_waypoints": [
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.06696011408222
+         },
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.05391197874125
+         }
+        ],
+        "kind": "DOGLEG_LEFT",
+        "objective": 1.2758510243070735,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 8.0
+       },
+       {
+        "candidate_id": "RETURN@8",
+        "detour_waypoints": [],
+        "kind": "RETURN",
+        "objective": 1.2789800348200349,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 8.0
+       },
+       {
+        "candidate_id": "DOGLEG_WIDE@8",
+        "detour_waypoints": [
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.06696011408222
+         },
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.05391197874125
+         }
+        ],
+        "kind": "DOGLEG_WIDE",
+        "objective": 1.3131558416772082,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 8.0
+       },
+       {
+        "candidate_id": "DOGLEG_LEFT@18",
+        "detour_waypoints": [
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.06696011408222
+         },
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.05391197874125
+         }
+        ],
+        "kind": "DOGLEG_LEFT",
+        "objective": 1.4786006705912835,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 18.0
+       },
+       {
+        "candidate_id": "CURRENT@8",
+        "detour_waypoints": [
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.0700902789462
+         },
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.05704214360523
+         }
+        ],
+        "kind": "CURRENT",
+        "objective": 1.488853314923549,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 8.0
+       },
+       {
+        "candidate_id": "RETURN@18",
+        "detour_waypoints": [],
+        "kind": "RETURN",
+        "objective": 1.962374364639112,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 18.0
+       }
+      ],
+      "selected_path": [],
+      "ship_id": "sim:999000001:v1",
+      "status": "NO_FEASIBLE_ROUTE"
+     }
+    ],
+    "decision_id": "crossing-s0-a5081684ea-advisor:d0004"
+   },
+   {
+    "actions": [],
+    "assessments": [
+     {
+      "costs": {
+       "added_delay_s": -1.1368683772161603e-13,
+       "assessed_factors": [
+        "F1_LAND_CLEARANCE",
+        "F2_WHALE_PROXIMITY",
+        "F3_WEATHER",
+        "F4_SIZE_SPEED",
+        "F5_DELAY",
+        "F6_DISTANCE",
+        "F7_FORWARD_REJOIN",
+        "F8_INPUT_QUALITY",
+        "F9_ROUTE_STABILITY",
+        "F10_COMPUTE_BUDGET"
+       ],
+       "candidates_evaluated": 12,
+       "contributions": {
+        "change": 0.0,
+        "delay": -1.93662788633444e-16,
+        "distance": 0.0,
+        "weather": 0.0,
+        "whale": 0.7845846987296698
+       },
+       "cpa": {
+        "cpa_m": 743.720069103413,
+        "cpa_time_s": 512.0859873688776,
+        "detection_id": "rpt-15a353684d41",
+        "sigma_m": 596.5699442268376
+       },
+       "evidence": {
+        "capped": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "not_due": 0,
+        "received": 4,
+        "stale": 0,
+        "used": 4
+       },
+       "extra_distance_m": 0.0,
+       "objective": 0.7845846987296696,
+       "reference": {
+        "basis": "CURRENT_PLAN_TO_ENDPOINT",
+        "reference_distance_m": 5435.944224136639,
+        "reference_eta_s": 587.0350134056845,
+        "rejoin_route_index": 3
+       },
+       "unmodeled_factors": [
+        "F11_SHIP_SHIP",
+        "F12_COLREG_TSS_LEGALITY",
+        "F13_DEPTH_DRAFT",
+        "F14_REALISTIC_DYNAMICS"
+       ],
+       "weather_cost_normalized": 0.0,
+       "weather_exposure_s": 0.0,
+       "whale_risk": 0.15691693974593396
+      },
+      "reason_codes": [
+       "NO_FEASIBLE_ROUTE",
+       "WHALE_WATCH"
+      ],
+      "rejected_candidates": [
+       {
+        "candidate_id": "DOGLEG_WIDE@18",
+        "detour_waypoints": [
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.06696011408222
+         },
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.05391197874125
+         }
+        ],
+        "kind": "DOGLEG_WIDE",
+        "objective": 0.5394878228719601,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 18.0
+       },
+       {
+        "candidate_id": "DOGLEG_WIDE@10",
+        "detour_waypoints": [
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.06696011408222
+         },
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.05391197874125
+         }
+        ],
+        "kind": "DOGLEG_WIDE",
+        "objective": 0.9530529283931496,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 10.0
+       },
+       {
+        "candidate_id": "RETURN@10",
+        "detour_waypoints": [],
+        "kind": "RETURN",
+        "objective": 1.0615057242675294,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 10.0
+       },
+       {
+        "candidate_id": "DOGLEG_LEFT@10",
+        "detour_waypoints": [
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.06696011408222
+         },
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.05391197874125
+         }
+        ],
+        "kind": "DOGLEG_LEFT",
+        "objective": 1.0619381811525919,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 10.0
+       },
+       {
+        "candidate_id": "CURRENT@10",
+        "detour_waypoints": [
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.0700902789462
+         },
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.05704214360523
+         }
+        ],
+        "kind": "CURRENT",
+        "objective": 1.141553256744931,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 10.0
+       },
+       {
+        "candidate_id": "RETURN@8",
+        "detour_waypoints": [],
+        "kind": "RETURN",
+        "objective": 1.2921411536857275,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 8.0
+       },
+       {
+        "candidate_id": "DOGLEG_WIDE@8",
+        "detour_waypoints": [
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.06696011408222
+         },
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.05391197874125
+         }
+        ],
+        "kind": "DOGLEG_WIDE",
+        "objective": 1.2979218103483365,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 8.0
+       },
+       {
+        "candidate_id": "DOGLEG_LEFT@8",
+        "detour_waypoints": [
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.06696011408222
+         },
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.05391197874125
+         }
+        ],
+        "kind": "DOGLEG_LEFT",
+        "objective": 1.2990904404025234,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 8.0
+       },
+       {
+        "candidate_id": "DOGLEG_LEFT@18",
+        "detour_waypoints": [
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.06696011408222
+         },
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.05391197874125
+         }
+        ],
+        "kind": "DOGLEG_LEFT",
+        "objective": 1.4710652979563053,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 18.0
+       },
+       {
+        "candidate_id": "CURRENT@8",
+        "detour_waypoints": [
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.0700902789462
+         },
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.05704214360523
+         }
+        ],
+        "kind": "CURRENT",
+        "objective": 1.4923874211171095,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 8.0
+       },
+       {
+        "candidate_id": "RETURN@18",
+        "detour_waypoints": [],
+        "kind": "RETURN",
+        "objective": 1.5509124281482134,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 18.0
+       }
+      ],
+      "selected_path": [],
+      "ship_id": "sim:999000001:v1",
+      "status": "NO_FEASIBLE_ROUTE"
+     }
+    ],
+    "decision_id": "crossing-s0-a5081684ea-advisor:d0005"
+   },
+   {
+    "actions": [],
+    "assessments": [
+     {
+      "costs": {
+       "added_delay_s": 0.0,
+       "assessed_factors": [
+        "F1_LAND_CLEARANCE",
+        "F2_WHALE_PROXIMITY",
+        "F3_WEATHER",
+        "F4_SIZE_SPEED",
+        "F5_DELAY",
+        "F6_DISTANCE",
+        "F7_FORWARD_REJOIN",
+        "F8_INPUT_QUALITY",
+        "F9_ROUTE_STABILITY",
+        "F10_COMPUTE_BUDGET"
+       ],
+       "candidates_evaluated": 12,
+       "contributions": {
+        "change": 0.0,
+        "delay": 0.0,
+        "distance": 0.0,
+        "weather": 0.0,
+        "whale": 0.7845846987296412
+       },
+       "cpa": {
+        "cpa_m": 743.7200691034133,
+        "cpa_time_s": 512.0859873688441,
+        "detection_id": "rpt-15a353684d41",
+        "sigma_m": 596.5699442267882
+       },
+       "evidence": {
+        "capped": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "not_due": 0,
+        "received": 5,
+        "stale": 0,
+        "used": 5
+       },
+       "extra_distance_m": 0.0,
+       "objective": 0.7845846987296412,
+       "reference": {
+        "basis": "CURRENT_PLAN_TO_ENDPOINT",
+        "reference_distance_m": 4880.344224136328,
+        "reference_eta_s": 527.035013405651,
+        "rejoin_route_index": 3
+       },
+       "unmodeled_factors": [
+        "F11_SHIP_SHIP",
+        "F12_COLREG_TSS_LEGALITY",
+        "F13_DEPTH_DRAFT",
+        "F14_REALISTIC_DYNAMICS"
+       ],
+       "weather_cost_normalized": 0.0,
+       "weather_exposure_s": 0.0,
+       "whale_risk": 0.15691693974592824
+      },
+      "reason_codes": [
+       "NO_FEASIBLE_ROUTE",
+       "WHALE_WATCH"
+      ],
+      "rejected_candidates": [
+       {
+        "candidate_id": "DOGLEG_WIDE@18",
+        "detour_waypoints": [
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.06696011408222
+         },
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.05391197874125
+         }
+        ],
+        "kind": "DOGLEG_WIDE",
+        "objective": 0.5315832160743337,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 18.0
+       },
+       {
+        "candidate_id": "DOGLEG_WIDE@10",
+        "detour_waypoints": [
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.06696011408222
+         },
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.05391197874125
+         }
+        ],
+        "kind": "DOGLEG_WIDE",
+        "objective": 0.9288172697460024,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 10.0
+       },
+       {
+        "candidate_id": "RETURN@10",
+        "detour_waypoints": [],
+        "kind": "RETURN",
+        "objective": 1.0067504158670293,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 10.0
+       },
+       {
+        "candidate_id": "RETURN@18",
+        "detour_waypoints": [],
+        "kind": "RETURN",
+        "objective": 1.0483871310123376,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 18.0
+       },
+       {
+        "candidate_id": "DOGLEG_LEFT@10",
+        "detour_waypoints": [
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.06696011408222
+         },
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.05391197874125
+         }
+        ],
+        "kind": "DOGLEG_LEFT",
+        "objective": 1.1332899075013985,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 10.0
+       },
+       {
+        "candidate_id": "CURRENT@10",
+        "detour_waypoints": [
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.0700902789462
+         },
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.05704214360523
+         }
+        ],
+        "kind": "CURRENT",
+        "objective": 1.1475239563363273,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 10.0
+       },
+       {
+        "candidate_id": "DOGLEG_WIDE@8",
+        "detour_waypoints": [
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.06696011408222
+         },
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.05391197874125
+         }
+        ],
+        "kind": "DOGLEG_WIDE",
+        "objective": 1.2773428342763449,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 8.0
+       },
+       {
+        "candidate_id": "RETURN@8",
+        "detour_waypoints": [],
+        "kind": "RETURN",
+        "objective": 1.2889603033181574,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 8.0
+       },
+       {
+        "candidate_id": "DOGLEG_LEFT@8",
+        "detour_waypoints": [
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.06696011408222
+         },
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.05391197874125
+         }
+        ],
+        "kind": "DOGLEG_LEFT",
+        "objective": 1.386555695935813,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 8.0
+       },
+       {
+        "candidate_id": "DOGLEG_LEFT@18",
+        "detour_waypoints": [
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.06696011408222
+         },
+         {
+          "lat": 34.204496608029594,
+          "lon": -120.05391197874125
+         }
+        ],
+        "kind": "DOGLEG_LEFT",
+        "objective": 1.4800759496914608,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 18.0
+       },
+       {
+        "candidate_id": "CURRENT@8",
+        "detour_waypoints": [
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.0700902789462
+         },
+         {
+          "lat": 34.20899321605919,
+          "lon": -120.05704214360523
+         }
+        ],
+        "kind": "CURRENT",
+        "objective": 1.5001071609795873,
+        "reasons": [
+         "LAND_CROSSING",
+         "WEATHER_BLOCKED"
+        ],
+        "speed_knots": 8.0
+       }
+      ],
+      "selected_path": [],
+      "ship_id": "sim:999000001:v1",
+      "status": "NO_FEASIBLE_ROUTE"
+     }
+    ],
+    "decision_id": "crossing-s0-a5081684ea-advisor:d0006"
+   }
+  ],
+  "events": [
+   {
+    "details": {
+     "route_id": "fixture-route-001",
+     "route_reused": false,
+     "source_mmsi": "999000001",
+     "voyage_id": "v1"
+    },
+    "ship_id": "sim:999000001:v1",
+    "sim_time_s": 0.0,
+    "type": "VOYAGE_SPAWNED"
+   },
+   {
+    "details": {
+     "action_id": "sim:999000001:v1:r1",
+     "apply_at_s": 60.0,
+     "command": "DETOUR",
+     "revision": 1
+    },
+    "ship_id": "sim:999000001:v1",
+    "sim_time_s": 60.0,
+    "type": "ACTION_ACCEPTED"
+   },
+   {
+    "details": {
+     "action_id": "sim:999000001:v1:r1",
+     "command": "DETOUR",
+     "rejoin_route_index": 2,
+     "revision": 1,
+     "route_changed": true,
+     "speed_knots": 18.0
+    },
+    "ship_id": "sim:999000001:v1",
+    "sim_time_s": 60.0,
+    "type": "COMMAND_APPLIED"
+   },
+   {
+    "details": {
+     "baseline_progress_index": 0,
+     "reason": "NO_FEASIBLE_ROUTE"
+    },
+    "ship_id": "sim:999000001:v1",
+    "sim_time_s": 60.0,
+    "type": "VOYAGE_FAILED"
+   }
+  ],
+  "frames": [
+   {
+    "alerts": [
+     {
+      "action_id": "sim:999000001:v1:r1",
+      "command": "DETOUR",
+      "rejoin_route_index": 2,
+      "revision": 1,
+      "ship_id": "sim:999000001:v1",
+      "valid_until": "2026-07-01T12:10:38.744Z"
+     }
+    ],
+    "analyst_truth": {
+     "label": "ANALYST_TRUTH_NOT_ADVISOR_INPUT",
+     "whales": [
+      {
+       "exposed": true,
+       "lat": 34.2,
+       "lon": -120.06249999999851,
+       "whale_id": "designated"
+      }
+     ]
+    },
+    "now": "2026-07-01T12:01:00Z",
+    "ships": [
+     {
+      "active_command": {
+       "action_id": "sim:999000001:v1:r1",
+       "command": "DETOUR",
+       "detour_waypoints": [
+        {
+         "lat": 34.20899321605919,
+         "lon": -120.0700902789462
+        },
+        {
+         "lat": 34.20899321605919,
+         "lon": -120.05704214360523
+        }
+       ],
+       "issued_at": "2026-07-01T12:01:00Z",
+       "metadata": {
+        "assessed_factors": [
+         "F1_LAND_CLEARANCE",
+         "F2_WHALE_PROXIMITY",
+         "F3_WEATHER",
+         "F4_SIZE_SPEED",
+         "F5_DELAY",
+         "F6_DISTANCE",
+         "F7_FORWARD_REJOIN",
+         "F8_INPUT_QUALITY",
+         "F9_ROUTE_STABILITY",
+         "F10_COMPUTE_BUDGET"
+        ],
+        "assumptions": [
+         "Whale motion unknown: stationary mean, uncertainty grows with age and lookahead.",
+         "Speed severity weight (speed/service)^2 is illustrative.",
+         "Instantaneous turns and speed changes; enclosing-circle hull clearance.",
+         "Weather is a simulated field; scores are proxies, not probabilities."
+        ],
+        "candidate_id": "DOGLEG_WIDE@18",
+        "costs": {
+         "added_delay_s": 82.16057669735136,
+         "candidates_evaluated": 12,
+         "contributions": {
+          "change": 0.1,
+          "delay": 0.18819006841289826,
+          "distance": 0.09409503420644907,
+          "weather": 0.0,
+          "whale": 0.5648856497716293
+         },
+         "cpa": {
+          "cpa_m": 992.8151903779791,
+          "cpa_time_s": 496.43245206752,
+          "detection_id": "rpt-d0c5af34d807",
+          "sigma_m": 751.3332508268111
+         },
+         "extra_distance_m": 760.8069402174733,
+         "objective": 0.9471707523909766,
+         "reference": {
+          "basis": "CURRENT_PLAN_TO_ENDPOINT",
+          "reference_distance_m": 4042.75818928035,
+          "reference_eta_s": 436.5829578056533,
+          "rejoin_route_index": 2
+         },
+         "weather_cost_normalized": 0.0,
+         "weather_exposure_s": 0.0,
+         "whale_risk": 0.11297712995432585
+        },
+        "decision_id": "crossing-s0-a5081684ea-advisor:d0002",
+        "triggers": [
+         "WHALE_WATCH"
+        ],
+        "unmodeled_factors": [
+         "F11_SHIP_SHIP",
+         "F12_COLREG_TSS_LEGALITY",
+         "F13_DEPTH_DRAFT",
+         "F14_REALISTIC_DYNAMICS"
+        ]
+       },
+       "rejoin_route_index": 2,
+       "revision": 1,
+       "ship_id": "sim:999000001:v1",
+       "target_speed_knots": null,
+       "valid_until": "2026-07-01T12:10:38.744Z"
+      },
+      "baseline_progress_index": 0,
+      "beam_m": 40.0,
+      "cog_deg": 65.50800309753663,
+      "current_route": [
+       {
+        "lat": 34.20899321605919,
+        "lon": -120.0700902789462
+       },
+       {
+        "lat": 34.20899321605919,
+        "lon": -120.05704214360523
+       },
+       {
+        "lat": 34.2,
+        "lon": -120.05
+       },
+       {
+        "lat": 34.2,
+        "lon": -120.025
+       }
+      ],
+      "incident_budget": {
+       "accumulated_distance_m": 0.0,
+       "accumulated_time_s": 0.0,
+       "incident_id": "sim:999000001:v1:incident:1",
+       "max_added_delay_s": 900.0,
+       "max_distance_m": 6064.137283920525,
+       "reference_distance_m": 4042.75818928035,
+       "reference_eta_s": 436.5829578056533,
+       "rejoin_route_index": 2
+      },
+      "last_action_at": "2026-07-01T12:01:00Z",
+      "lat": 34.2,
+      "latest_revision": 1,
+      "length_m": 300.0,
+      "lon": -120.09395871333713,
+      "original_route": [
+       {
+        "lat": 34.2,
+        "lon": -120.1
+       },
+       {
+        "lat": 34.2,
+        "lon": -120.075
+       },
+       {
+        "lat": 34.2,
+        "lon": -120.05
+       },
+       {
+        "lat": 34.2,
+        "lon": -120.025
+       }
+      ],
+      "service_speed_knots": 18.0,
+      "ship_id": "sim:999000001:v1",
+      "sog_knots": 18.0
+     }
+    ],
+    "sim_time_s": 60.0,
+    "whale_detections": [
+     {
+      "detection_id": "rpt-d0c5af34d807",
+      "lat": 34.200899830261726,
+      "lon": -120.06356621127571,
+      "observed_at": "2026-07-01T12:00:00Z",
+      "position_error_m": 100.0,
+      "reported_at": "2026-07-01T12:00:11.329Z",
+      "source": "SIMULATED_SHIP_LOOKOUT",
+      "species": "humpback"
+     }
+    ]
+   },
+   {
+    "alerts": [],
+    "analyst_truth": {
+     "label": "ANALYST_TRUTH_NOT_ADVISOR_INPUT",
+     "whales": [
+      {
+       "exposed": true,
+       "lat": 34.2,
+       "lon": -120.06249999999851,
+       "whale_id": "designated"
+      }
+     ]
+    },
+    "now": "2026-07-01T12:05:00Z",
+    "ships": [],
+    "sim_time_s": 300.0,
+    "whale_detections": [
+     {
+      "detection_id": "rpt-d0c5af34d807",
+      "lat": 34.200899830261726,
+      "lon": -120.06356621127571,
+      "observed_at": "2026-07-01T12:00:00Z",
+      "position_error_m": 100.0,
+      "reported_at": "2026-07-01T12:00:11.329Z",
+      "source": "SIMULATED_SHIP_LOOKOUT",
+      "species": "humpback"
+     },
+     {
+      "detection_id": "rpt-dea41003899e",
+      "lat": 34.20130831826321,
+      "lon": -120.06147877284022,
+      "observed_at": "2026-07-01T12:01:00Z",
+      "position_error_m": 100.0,
+      "reported_at": "2026-07-01T12:01:03.098Z",
+      "source": "SIMULATED_SHIP_LOOKOUT",
+      "species": "humpback"
+     },
+     {
+      "detection_id": "rpt-15a353684d41",
+      "lat": 34.2010234258415,
+      "lon": -120.06043604641174,
+      "observed_at": "2026-07-01T12:02:00Z",
+      "position_error_m": 100.0,
+      "reported_at": "2026-07-01T12:02:05.360Z",
+      "source": "SIMULATED_SHIP_LOOKOUT",
+      "species": "humpback"
+     },
+     {
+      "detection_id": "rpt-f69ba7887f48",
+      "lat": 34.19937563652743,
+      "lon": -120.0615145857924,
+      "observed_at": "2026-07-01T12:03:00Z",
+      "position_error_m": 100.0,
+      "reported_at": "2026-07-01T12:03:18.395Z",
+      "source": "SIMULATED_SHIP_LOOKOUT",
+      "species": "humpback"
+     },
+     {
+      "detection_id": "rpt-f90e01617c21",
+      "lat": 34.19946208044684,
+      "lon": -120.06152979431985,
+      "observed_at": "2026-07-01T12:04:00Z",
+      "position_error_m": 100.0,
+      "reported_at": "2026-07-01T12:04:26.509Z",
+      "source": "SIMULATED_SHIP_LOOKOUT",
+      "species": "humpback"
+     }
+    ]
+   }
+  ],
+  "manifest": {
+   "assumptions": [
+    "Ships, whales, sightings and weather are simulated; AIS supplies baseline geometry only.",
+    "Instantaneous turns/speed changes; enclosing-circle hull and whale bodies.",
+    "whale_exposure_proxy is a smooth diagnostic, not expected deaths.",
+    "No ship-ship, legality, depth or realistic-dynamics checks (F11-F14)."
+   ],
+   "config_sha256": "970b44cf40250bb502f4db61d89f63d7b34794b193f7f9042cc22715e209c355",
+   "counters": {
+    "alerts": 1,
+    "applied": 1,
+    "decisions": 14,
+    "decisions_dropped": 0,
+    "dropped_cap": 0,
+    "dropped_stale": 0,
+    "duplicates": 0,
+    "events_dropped": 0,
+    "expired_pending": 0,
+    "fallback_failures": 0,
+    "fallbacks": 0,
+    "frame_every_s": 60.0,
+    "frames": 15,
+    "ignored": 0,
+    "lease_expiries": 0,
+    "no_feasible": 0,
+    "open_episodes_censored": 0,
+    "rejected_actions": 0,
+    "reports_generated": 14,
+    "reports_released": 14,
+    "route_changes": 1,
+    "superseded": 0
+   },
+   "duration_s": 7200.0,
+   "fixture_only": true,
+   "issues": [],
+   "land": {
+    "dict_sha256": "1f77c7c289452f4d196ee1d204a6baf5dc213e1efa6b9c973308c9f326792297",
+    "fixture_only": true,
+    "issues": [],
+    "map_id": "fixture-land-far",
+    "sha256": "cad03872a643520136aee9881bc59429a0c056aa87de48eaa075797be034b250",
+    "validated": true
+   },
+   "mode": "AIS_SEEDED_SIMULATION",
+   "route_bundle": {
+    "bundle_id": "fixture-bundle-001",
+    "issues": [
+     "VALIDATED_AGAINST_FIXTURE_MAP"
+    ],
+    "routes_used": {
+     "fixture-route-001": {
+      "reused": false,
+      "voyages": [
+       "v1"
+      ],
+      "waypoints_sha256": "9d7d243d5d18661ae143ca7596c5f8c9cd50fd3123b3d1b6eaec231b1dde488b"
+     }
+    },
+    "sha256": "cc8249039c2f876a5e8a390a3482c61ff7041792b4ccfe94a673d49c25aee2e3",
+    "source": {
+     "api_verified": false,
+     "capture_sha256": null,
+     "captured_at": null,
+     "fixture_only": true,
+     "kind": "SYNTHETIC_FIXTURE"
+    }
+   },
+   "run_id": "crossing-s0-a5081684ea-advisor",
+   "scenario_id": "crossing",
+   "schema_version": "2.0",
+   "seed": 0,
+   "start_at": "2026-07-01T12:00:00Z",
+   "status": "INCOMPLETE",
+   "status_reasons": [
+    "VOYAGE_FAILED:NO_FEASIBLE_ROUTE"
+   ],
+   "voyage_issues": [],
+   "voyages": [
+    {
+     "added_delay_s": null,
+     "baseline_progress_index": 3,
+     "censored": true,
+     "close_approaches": 0,
+     "completed_s": 827.0350134056636,
+     "distance_m": 7658.344224136447,
+     "duration_s": null,
+     "entry_s": 0.0,
+     "extra_distance_m": null,
+     "fail_reason": "NO_FEASIBLE_ROUTE",
+     "modeled_contacts": 0,
+     "reference_distance_m": 6897.537283918911,
+     "reference_duration_s": 744.8744367083057,
+     "route_id": "fixture-route-001",
+     "ship_id": "sim:999000001:v1",
+     "source_mmsi": "999000001",
+     "status": "FAILED",
+     "voyage_id": "v1",
+     "weather_exposure_s": 0.0,
+     "whale_exposure_proxy": 0.023022445025887284
+    }
+   ],
+   "weather": {
+    "coverage_end_s": 12600.0,
+    "coverage_start_s": 0.0,
+    "source": "SIMULATED",
+    "zones": []
+   }
+  },
+  "summary": {
+   "added_delay_s": null,
+   "alerts": 0,
+   "close_approaches": 0,
+   "elapsed_wall_s": 0.037880041,
+   "extra_distance_m": null,
+   "modeled_contacts": 0,
+   "rejected_actions": 0,
+   "route_changes": 0,
+   "simulated_duration_s": 840.0,
+   "status": "INCOMPLETE",
+   "voyages_completed": 0,
+   "voyages_failed": 1,
+   "weather_exposure_s": 0.0,
+   "whale_exposure_proxy": 0.023022445025887284
+  }
+ },
+ "baseline": {
+  "_fixture": "SYNTHETIC_FIXTURE canned UI result; not a real run",
+  "decisions": [
+   {
+    "actions": [],
+    "assessments": [],
+    "decision_id": "crossing-s0-a5081684ea-no_action:d0001"
+   },
+   {
+    "actions": [],
+    "assessments": [],
+    "decision_id": "crossing-s0-a5081684ea-no_action:d0002"
+   },
+   {
+    "actions": [],
+    "assessments": [],
+    "decision_id": "crossing-s0-a5081684ea-no_action:d0003"
+   },
+   {
+    "actions": [],
+    "assessments": [],
+    "decision_id": "crossing-s0-a5081684ea-no_action:d0004"
+   },
+   {
+    "actions": [],
+    "assessments": [],
+    "decision_id": "crossing-s0-a5081684ea-no_action:d0005"
+   },
+   {
+    "actions": [],
+    "assessments": [],
+    "decision_id": "crossing-s0-a5081684ea-no_action:d0006"
+   }
+  ],
+  "events": [
+   {
+    "details": {
+     "route_id": "fixture-route-001",
+     "route_reused": false,
+     "source_mmsi": "999000001",
+     "voyage_id": "v1"
+    },
+    "ship_id": "sim:999000001:v1",
+    "sim_time_s": 0.0,
+    "type": "VOYAGE_SPAWNED"
+   },
+   {
+    "details": {
+     "enter_body_clearance_m": 500.0
+    },
+    "ship_id": "sim:999000001:v1",
+    "sim_time_s": 300.74958773814745,
+    "type": "ENCOUNTER_START"
+   },
+   {
+    "details": {
+     "model": "enclosing_circles"
+    },
+    "ship_id": "sim:999000001:v1",
+    "sim_time_s": 354.7452680837199,
+    "type": "CONTACT"
+   },
+   {
+    "details": {
+     "exit_dwell_s": 120.0
+    },
+    "ship_id": "sim:999000001:v1",
+    "sim_time_s": 591.122689142946,
+    "type": "ENCOUNTER_END"
+   },
+   {
+    "details": {},
+    "ship_id": "sim:999000001:v1",
+    "sim_time_s": 744.8744367083069,
+    "type": "VOYAGE_COMPLETE"
+   }
+  ],
+  "frames": [
+   {
+    "alerts": [],
+    "analyst_truth": {
+     "label": "ANALYST_TRUTH_NOT_ADVISOR_INPUT",
+     "whales": [
+      {
+       "exposed": true,
+       "lat": 34.2,
+       "lon": -120.06249999999851,
+       "whale_id": "designated"
+      }
+     ]
+    },
+    "now": "2026-07-01T12:01:00Z",
+    "ships": [
+     {
+      "active_command": null,
+      "baseline_progress_index": 0,
+      "beam_m": 40.0,
+      "cog_deg": 90.0,
+      "current_route": [
+       {
+        "lat": 34.2,
+        "lon": -120.075
+       },
+       {
+        "lat": 34.2,
+        "lon": -120.05
+       },
+       {
+        "lat": 34.2,
+        "lon": -120.025
+       }
+      ],
+      "incident_budget": null,
+      "last_action_at": null,
+      "lat": 34.2,
+      "latest_revision": 0,
+      "length_m": 300.0,
+      "lon": -120.09395871333713,
+      "original_route": [
+       {
+        "lat": 34.2,
+        "lon": -120.1
+       },
+       {
+        "lat": 34.2,
+        "lon": -120.075
+       },
+       {
+        "lat": 34.2,
+        "lon": -120.05
+       },
+       {
+        "lat": 34.2,
+        "lon": -120.025
+       }
+      ],
+      "service_speed_knots": 18.0,
+      "ship_id": "sim:999000001:v1",
+      "sog_knots": 18.0
+     }
+    ],
+    "sim_time_s": 60.0,
+    "whale_detections": [
+     {
+      "detection_id": "rpt-d0c5af34d807",
+      "lat": 34.200899830261726,
+      "lon": -120.06356621127571,
+      "observed_at": "2026-07-01T12:00:00Z",
+      "position_error_m": 100.0,
+      "reported_at": "2026-07-01T12:00:11.329Z",
+      "source": "SIMULATED_SHIP_LOOKOUT",
+      "species": "humpback"
+     }
+    ]
+   },
+   {
+    "alerts": [],
+    "analyst_truth": {
+     "label": "ANALYST_TRUTH_NOT_ADVISOR_INPUT",
+     "whales": [
+      {
+       "exposed": true,
+       "lat": 34.2,
+       "lon": -120.06249999999851,
+       "whale_id": "designated"
+      }
+     ]
+    },
+    "now": "2026-07-01T12:05:00Z",
+    "ships": [
+     {
+      "active_command": null,
+      "baseline_progress_index": 1,
+      "beam_m": 40.0,
+      "cog_deg": 90.0,
+      "current_route": [
+       {
+        "lat": 34.2,
+        "lon": -120.05
+       },
+       {
+        "lat": 34.2,
+        "lon": -120.025
+       }
+      ],
+      "incident_budget": null,
+      "last_action_at": null,
+      "lat": 34.2,
+      "latest_revision": 0,
+      "length_m": 300.0,
+      "lon": -120.06979356668563,
+      "original_route": [
+       {
+        "lat": 34.2,
+        "lon": -120.1
+       },
+       {
+        "lat": 34.2,
+        "lon": -120.075
+       },
+       {
+        "lat": 34.2,
+        "lon": -120.05
+       },
+       {
+        "lat": 34.2,
+        "lon": -120.025
+       }
+      ],
+      "service_speed_knots": 18.0,
+      "ship_id": "sim:999000001:v1",
+      "sog_knots": 18.0
+     }
+    ],
+    "sim_time_s": 300.0,
+    "whale_detections": [
+     {
+      "detection_id": "rpt-d0c5af34d807",
+      "lat": 34.200899830261726,
+      "lon": -120.06356621127571,
+      "observed_at": "2026-07-01T12:00:00Z",
+      "position_error_m": 100.0,
+      "reported_at": "2026-07-01T12:00:11.329Z",
+      "source": "SIMULATED_SHIP_LOOKOUT",
+      "species": "humpback"
+     },
+     {
+      "detection_id": "rpt-dea41003899e",
+      "lat": 34.20130831826321,
+      "lon": -120.06147877284022,
+      "observed_at": "2026-07-01T12:01:00Z",
+      "position_error_m": 100.0,
+      "reported_at": "2026-07-01T12:01:03.098Z",
+      "source": "SIMULATED_SHIP_LOOKOUT",
+      "species": "humpback"
+     },
+     {
+      "detection_id": "rpt-15a353684d41",
+      "lat": 34.2010234258415,
+      "lon": -120.06043604641174,
+      "observed_at": "2026-07-01T12:02:00Z",
+      "position_error_m": 100.0,
+      "reported_at": "2026-07-01T12:02:05.360Z",
+      "source": "SIMULATED_SHIP_LOOKOUT",
+      "species": "humpback"
+     },
+     {
+      "detection_id": "rpt-f69ba7887f48",
+      "lat": 34.19937563652743,
+      "lon": -120.0615145857924,
+      "observed_at": "2026-07-01T12:03:00Z",
+      "position_error_m": 100.0,
+      "reported_at": "2026-07-01T12:03:18.395Z",
+      "source": "SIMULATED_SHIP_LOOKOUT",
+      "species": "humpback"
+     },
+     {
+      "detection_id": "rpt-f90e01617c21",
+      "lat": 34.19946208044684,
+      "lon": -120.06152979431985,
+      "observed_at": "2026-07-01T12:04:00Z",
+      "position_error_m": 100.0,
+      "reported_at": "2026-07-01T12:04:26.509Z",
+      "source": "SIMULATED_SHIP_LOOKOUT",
+      "species": "humpback"
+     }
+    ]
+   }
+  ],
+  "manifest": {
+   "assumptions": [
+    "Ships, whales, sightings and weather are simulated; AIS supplies baseline geometry only.",
+    "Instantaneous turns/speed changes; enclosing-circle hull and whale bodies.",
+    "whale_exposure_proxy is a smooth diagnostic, not expected deaths.",
+    "No ship-ship, legality, depth or realistic-dynamics checks (F11-F14)."
+   ],
+   "config_sha256": "970b44cf40250bb502f4db61d89f63d7b34794b193f7f9042cc22715e209c355",
+   "counters": {
+    "alerts": 0,
+    "applied": 0,
+    "decisions": 13,
+    "decisions_dropped": 0,
+    "dropped_cap": 0,
+    "dropped_stale": 0,
+    "duplicates": 0,
+    "events_dropped": 0,
+    "expired_pending": 0,
+    "fallback_failures": 0,
+    "fallbacks": 0,
+    "frame_every_s": 60.0,
+    "frames": 14,
+    "ignored": 0,
+    "lease_expiries": 0,
+    "no_feasible": 0,
+    "open_episodes_censored": 0,
+    "rejected_actions": 0,
+    "reports_generated": 13,
+    "reports_released": 13,
+    "route_changes": 0,
+    "superseded": 0
+   },
+   "duration_s": 7200.0,
+   "fixture_only": true,
+   "issues": [],
+   "land": {
+    "dict_sha256": "1f77c7c289452f4d196ee1d204a6baf5dc213e1efa6b9c973308c9f326792297",
+    "fixture_only": true,
+    "issues": [],
+    "map_id": "fixture-land-far",
+    "sha256": "cad03872a643520136aee9881bc59429a0c056aa87de48eaa075797be034b250",
+    "validated": true
+   },
+   "mode": "AIS_SEEDED_SIMULATION",
+   "route_bundle": {
+    "bundle_id": "fixture-bundle-001",
+    "issues": [
+     "VALIDATED_AGAINST_FIXTURE_MAP"
+    ],
+    "routes_used": {
+     "fixture-route-001": {
+      "reused": false,
+      "voyages": [
+       "v1"
+      ],
+      "waypoints_sha256": "9d7d243d5d18661ae143ca7596c5f8c9cd50fd3123b3d1b6eaec231b1dde488b"
+     }
+    },
+    "sha256": "cc8249039c2f876a5e8a390a3482c61ff7041792b4ccfe94a673d49c25aee2e3",
+    "source": {
+     "api_verified": false,
+     "capture_sha256": null,
+     "captured_at": null,
+     "fixture_only": true,
+     "kind": "SYNTHETIC_FIXTURE"
+    }
+   },
+   "run_id": "crossing-s0-a5081684ea-no_action",
+   "scenario_id": "crossing",
+   "schema_version": "2.0",
+   "seed": 0,
+   "start_at": "2026-07-01T12:00:00Z",
+   "status": "COMPLETE",
+   "status_reasons": [],
+   "voyage_issues": [],
+   "voyages": [
+    {
+     "added_delay_s": 1.2505552149377763e-12,
+     "baseline_progress_index": 3,
+     "censored": false,
+     "close_approaches": 1,
+     "completed_s": 744.8744367083069,
+     "distance_m": 6897.537283918925,
+     "duration_s": 744.8744367083069,
+     "entry_s": 0.0,
+     "extra_distance_m": 1.3642420526593924e-11,
+     "fail_reason": null,
+     "modeled_contacts": 1,
+     "reference_distance_m": 6897.537283918911,
+     "reference_duration_s": 744.8744367083057,
+     "route_id": "fixture-route-001",
+     "ship_id": "sim:999000001:v1",
+     "source_mmsi": "999000001",
+     "status": "COMPLETE",
+     "voyage_id": "v1",
+     "weather_exposure_s": 0.0,
+     "whale_exposure_proxy": 2.506628274631008
+    }
+   ],
+   "weather": {
+    "coverage_end_s": 12600.0,
+    "coverage_start_s": 0.0,
+    "source": "SIMULATED",
+    "zones": []
+   }
+  },
+  "summary": {
+   "added_delay_s": 1.2505552149377763e-12,
+   "alerts": 0,
+   "close_approaches": 1,
+   "elapsed_wall_s": 0.011863916000000002,
+   "extra_distance_m": 1.3642420526593924e-11,
+   "modeled_contacts": 1,
+   "rejected_actions": 0,
+   "route_changes": 0,
+   "simulated_duration_s": 750.0,
+   "status": "COMPLETE",
+   "voyages_completed": 1,
+   "voyages_failed": 0,
+   "weather_exposure_s": 0.0,
+   "whale_exposure_proxy": 2.506628274631008
+  }
+ },
+ "inputs": {
+  "_fixture": "SYNTHETIC_FIXTURE canned UI result; not a real run",
+  "config": {
+   "ais": {
+    "bbox": {
+     "lat_max": 34.6,
+     "lat_min": 33.8,
+     "lon_max": -119.0,
+     "lon_min": -120.5
+    },
+    "capture_max_s": 1800,
+    "clearance_margin_m": 100,
+    "default_beam_m": 40,
+    "default_length_m": 300,
+    "gap_split_s": 180,
+    "max_clip_s": 1800,
+    "max_consecutive_failures": 5,
+    "max_implied_speed_knots": 40,
+    "max_records": 50000,
+    "max_route_vertices": 32,
+    "max_routes": 5,
+    "message_types": [
+     "PositionReport",
+     "StandardClassBPositionReport",
+     "ExtendedClassBPositionReport",
+     "ShipStaticData",
+     "StaticDataReport"
+    ],
+    "min_fixes": 3,
+    "min_span_s": 60,
+    "min_speed_knots": 6,
+    "min_travel_m": 250,
+    "moving_sog_knots": 1.0,
+    "preferred_clip_s": 900,
+    "reconnect_initial_s": 1,
+    "reconnect_max_s": 30,
+    "simplify_tolerance_m": 25,
+    "stale_after_s": 120
+   },
+   "metrics": {
+    "encounter_enter_m": 500,
+    "encounter_exit_dwell_s": 120,
+    "encounter_exit_m": 750,
+    "sigma_eval_m": 300,
+    "whale_body_radius_m": 12.5
+   },
+   "planner": {
+    "alt_speeds_knots": [
+     10,
+     8
+    ],
+    "bypass_half_length_m": 600,
+    "clearance_margin_m": 100,
+    "cooldown_s": 60,
+    "drift_mps": 1.5,
+    "lease_margin_s": 60,
+    "lookahead_s": 900,
+    "max_added_delay_s": 900,
+    "max_candidates": 12,
+    "max_detection_age_s": 1800,
+    "max_detour_waypoints": 8,
+    "max_geometries": 4,
+    "max_path_ratio": 1.5,
+    "max_planned_ships": 5,
+    "max_rejoin_s": 3600,
+    "max_reports": 50,
+    "max_speeds": 3,
+    "min_lead_m": 200,
+    "min_objective_improvement": 0.01,
+    "min_speed_knots": 6,
+    "min_whale_improvement": 0.05,
+    "offsets_m": [
+     500,
+     1000
+    ],
+    "progress_tolerance_m": 1.0,
+    "rejoin_taper_m": 500,
+    "sigma_min_m": 50,
+    "stale_issue_s": 120,
+    "w_change": 0.1,
+    "w_delay": 1,
+    "w_distance": 0.5,
+    "w_weather": 2,
+    "w_whale": 5,
+    "watch_distance_m": 3000,
+    "weather_trigger_normalized": 0.05,
+    "whale_risk_tolerance": 0.01
+   },
+   "response": {
+    "compliance": 1.0,
+    "response_lag_s": 0
+   },
+   "scenarios": {
+    "background_margin_m": 5000,
+    "default_voyages": 5,
+    "default_whales": 20,
+    "max_storm_zones": 3,
+    "presets_dir": "config/scenarios",
+    "start_at": "2026-07-01T12:00:00Z",
+    "voyage_spacing_s": 600
+   },
+   "sensors": {
+    "max_detection_age_s": 1800,
+    "max_reports": 50,
+    "observers": [
+     {
+      "delay_max_s": 30,
+      "delay_min_s": 0,
+      "kind": "SHIP_LOOKOUT",
+      "p_detect": 1.0,
+      "position_error_m": 100,
+      "range_m": 4000,
+      "sensor_id": "lookout"
+     }
+    ],
+    "sample_dt_s": 60
+   },
+   "simulation": {
+    "decision_dt_s": 60,
+    "drain_max_s": 1800,
+    "dt_s": 30,
+    "duration_s": 7200,
+    "frame_every_s": 60,
+    "max_decisions": 300,
+    "max_drain_s": 1800,
+    "max_duration_s": 21600,
+    "max_events": 2000,
+    "max_frames": 400,
+    "max_voyages": 10,
+    "max_whales": 30,
+    "record_analyst_truth": true,
+    "wall_limit_s": 30,
+    "whale_deep_s": 480,
+    "whale_speed_mps": 1.0,
+    "whale_speed_range_mps": [
+     0.5,
+     2.0
+    ],
+    "whale_surface_s": 120,
+    "whale_turn_every_s": 600,
+    "whale_turn_sd_deg": 30
+   }
+  },
+  "fixture_only": true,
+  "land": {
+   "bbox": {
+    "lat_max": 34.6,
+    "lat_min": 33.8,
+    "lon_max": -119.0,
+    "lon_min": -120.5
+   },
+   "fixture_only": true,
+   "geojson": {
+    "features": [
+     {
+      "geometry": {
+       "coordinates": [
+        [
+         [
+          -120.075,
+          34.304
+         ],
+         [
+          -120.055,
+          34.304
+         ],
+         [
+          -120.055,
+          34.316
+         ],
+         [
+          -120.075,
+          34.316
+         ],
+         [
+          -120.075,
+          34.304
+         ]
+        ]
+       ],
+       "type": "Polygon"
+      },
+      "properties": {
+       "name": "land-far"
+      },
+      "type": "Feature"
+     }
+    ],
+    "provenance": {
+     "bbox": {
+      "lat_max": 34.6,
+      "lat_min": 33.8,
+      "lon_max": -119.0,
+      "lon_min": -120.5
+     },
+     "fixture_only": true,
+     "map_id": "fixture-land-far",
+     "note": "Explicitly fixture-only test geometry; not real or verified coastline.",
+     "research_only": true,
+     "source": "SYNTHETIC_FIXTURE toy rectangle (same shape moved ~11 km north, away from the recipe route)"
+    },
+    "type": "FeatureCollection"
+   },
+   "issues": [],
+   "map_id": "fixture-land-far",
+   "provenance": {
+    "bbox": {
+     "lat_max": 34.6,
+     "lat_min": 33.8,
+     "lon_max": -119.0,
+     "lon_min": -120.5
+    },
+    "fixture_only": true,
+    "map_id": "fixture-land-far",
+    "note": "Explicitly fixture-only test geometry; not real or verified coastline.",
+    "research_only": true,
+    "source": "SYNTHETIC_FIXTURE toy rectangle (same shape moved ~11 km north, away from the recipe route)"
+   },
+   "rings": [
+    [
+     {
+      "lat": 34.304,
+      "lon": -120.075
+     },
+     {
+      "lat": 34.304,
+      "lon": -120.055
+     },
+     {
+      "lat": 34.316,
+      "lon": -120.055
+     },
+     {
+      "lat": 34.316,
+      "lon": -120.075
+     }
+    ]
+   ],
+   "sha256": "cad03872a643520136aee9881bc59429a0c056aa87de48eaa075797be034b250",
+   "simplifications": [],
+   "source": "SYNTHETIC_FIXTURE toy rectangle (same shape moved ~11 km north, away from the recipe route)",
+   "validated": true
+  },
+  "route_bundle": {
+   "bbox": {
+    "lat_max": 34.6,
+    "lat_min": 33.8,
+    "lon_max": -119.0,
+    "lon_min": -120.5
+   },
+   "bundle_id": "fixture-bundle-001",
+   "issues": [
+    "VALIDATED_AGAINST_FIXTURE_MAP"
+   ],
+   "routes": [
+    {
+     "assumed_fields": [],
+     "beam_m": 40.0,
+     "length_m": 300.0,
+     "route_id": "fixture-route-001",
+     "service_speed_knots": 18.0,
+     "source_end_at": "2026-07-01T11:12:30Z",
+     "source_mmsi": "999000001",
+     "source_start_at": "2026-07-01T11:00:00Z",
+     "validation": {
+      "ok": true,
+      "reasons": []
+     },
+     "waypoints": [
+      {
+       "lat": 34.2,
+       "lon": -120.1
+      },
+      {
+       "lat": 34.2,
+       "lon": -120.075
+      },
+      {
+       "lat": 34.2,
+       "lon": -120.05
+      },
+      {
+       "lat": 34.2,
+       "lon": -120.025
+      }
+     ]
+    }
+   ],
+   "schema_version": "2.0",
+   "source": {
+    "api_verified": false,
+    "capture_sha256": null,
+    "captured_at": null,
+    "fixture_only": true,
+    "kind": "SYNTHETIC_FIXTURE"
+   }
+  },
+  "run_id": "crossing-s0-a5081684ea",
+  "scenario": {
+   "duration_s": 7200.0,
+   "scenario_id": "crossing",
+   "seed": 0,
+   "start_at": "2026-07-01T12:00:00Z",
+   "voyages": [
+    {
+     "entry_s": 0.0,
+     "route_id": "fixture-route-001",
+     "voyage_id": "v1"
+    }
+   ],
+   "weather": {
+    "coverage_end_s": 12600.0,
+    "coverage_start_s": 0.0,
+    "source": "SIMULATED",
+    "zones": []
+   },
+   "whales": [
+    {
+     "exposure": [
+      {
+       "exposed": true,
+       "from_s": 0,
+       "until_s": 1000000000.0
+      }
+     ],
+     "species": "humpback",
+     "speed_mps": 0.0,
+     "start": {
+      "lat": 34.2,
+      "lon": -120.0625
+     },
+     "whale_id": "designated"
+    }
+   ]
+  }
+ }
+}

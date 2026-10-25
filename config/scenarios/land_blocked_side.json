@@ -1,0 +1,15 @@
+{
+  "preset_id": "land_blocked_side",
+  "label": "Land-blocked side (fixture)",
+  "description": "SYNTHETIC_FIXTURE case: the crossing whale plus a toy land rectangle just north of the fixture route, so the north dogleg is rejected and the advisor must pass on the south side. Uses the fixture route and toy land only; never real coastline.",
+  "seed": 0,
+  "route_ids": ["fixture-route-001"],
+  "voyages": 1,
+  "voyage_spacing_s": 600,
+  "designated_whale": {"at_fraction": 0.5, "lateral_m": 0, "speed_mps": 0.0, "heading_rel_deg": 90,
+                       "exposure": "ALWAYS", "species": "humpback"},
+  "background_whales": 0,
+  "weather": {"preset": "CLEAR", "zones": []},
+  "land_override": "tests/fixtures/common/land_blocked_side.fixture.geojson",
+  "fixture_only": true
+}

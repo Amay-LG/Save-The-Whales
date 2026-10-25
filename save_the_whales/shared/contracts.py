@@ -259,13 +259,34 @@ class Voyage(TypedDict):
     entry_s: float
 
 
+class _ScenarioWhaleRequired(TypedDict):
+    whale_id: str            # private local ID; never enters advisor payloads
+    start: Point
+
+
+class ScenarioWhale(_ScenarioWhaleRequired, total=False):
+    # Movement (one of): waypoints + speed_mps; heading_deg + speed_mps (+ turns); random_walk (+ area).
+    species: str
+    speed_mps: float
+    heading_deg: float                   # compass, 0 = north
+    turns: List[Dict[str, float]]        # [{"at_s", "heading_deg", "speed_mps"?}]
+    waypoints: List[Point]
+    random_walk: bool
+    area: BBox                           # reflection box for random walks
+    # Exposure (one of): explicit schedule (gaps are not exposed) or a surface/deep cycle.
+    exposure: List[Dict[str, Any]]       # [{"from_s", "until_s", "exposed": bool}]
+    surface_s: float
+    deep_s: float
+    phase_s: float
+
+
 class Scenario(TypedDict):
     scenario_id: str
     seed: int
     start_at: str
     duration_s: float
     voyages: List[Voyage]
-    whales: List[Dict[str, Any]]   # private controlled whales; never enter advisor payloads
+    whales: List[ScenarioWhale]    # private controlled whales; never enter advisor payloads
     weather: WeatherField
 
 
@@ -362,11 +383,19 @@ class IncidentBudget(TypedDict):
     accumulated_distance_m: float
 
 
+class ValidatedAction(TypedDict):
+    action: Action                          # the submitted action, unmodified (resolve, never rewrite)
+    remaining_waypoints: List[Point]        # future path, excluding the current position, through the
+                                            # route end: detour points + original_route[rejoin:]
+    rejoin_route_index: Optional[int]       # None for SLOWDOWN (path unchanged)
+    effective_target_speed_knots: Optional[float]
+    incident_budget: Optional[IncidentBudget]
+
+
 class ValidationResult(TypedDict):
     ok: bool
     reasons: List[str]
-    validated_action: Optional[Dict[str, Any]]  # action + remaining_waypoints, rejoin index,
-                                                # effective target speed, incident budget
+    validated_action: Optional[ValidatedAction]
 
 
 class CostBreakdown(TypedDict, total=False):
