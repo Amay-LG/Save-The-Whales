@@ -7,9 +7,10 @@ import streamlit as st
 from .scenarios import load_config, readiness_issues, PRESETS
 from .comparison import save_comparison
 from .plots import map_data, build_deck, assessment_rows
+from .impact import render_story, render_facts
 
 CSS = '''<style>
-[data-testid="stAppViewContainer"]{background:radial-gradient(ellipse at 80% 0%,#164c60 0%,#0a2c3e 38%,#061b2a 85%);color:#edf9fc}
+[data-testid="stAppViewContainer"]{background:#092433;color:#edf9fc}
 [data-testid="stSidebar"]{background:#092b3b;border-right:1px solid #285366}
 .block-container{padding-top:2rem;max-width:1600px}
 h1{font-weight:550!important;letter-spacing:-1.5px!important;font-size:2.5rem!important}
@@ -36,12 +37,14 @@ def render_dashboard(services):
         state[prefix+'bundle'] = deepcopy(services.get('initial_bundle'))
         state[prefix+'land'] = deepcopy(services.get('initial_land'))
     bundle, land = state[prefix+'bundle'], state[prefix+'land']
-    st.markdown('<div class="eyebrow">OCEAN LAB / SANTA BARBARA CHANNEL</div>', unsafe_allow_html=True)
+    st.markdown('<div class="eyebrow">SANTA BARBARA / AN OCEAN WE SHARE</div>', unsafe_allow_html=True)
     st.title('Save the Whales')
-    st.markdown('<div class="lead">A clearer course through a changing ocean. Explore how simulated ships respond to whale sightings and storm conditions along real recorded passages.</div>', unsafe_allow_html=True)
-    st.markdown('<div class="ocean-wave"><svg viewBox="0 0 1000 32" width="100%" height="32" preserveAspectRatio="none"><path d="M0 18 Q125 0 250 18 T500 18 T750 18 T1000 18" fill="none" stroke="#74d2d5" stroke-width="1" opacity=".7"/><path d="M0 25 Q125 7 250 25 T500 25 T750 25 T1000 25" fill="none" stroke="#3c8eab" stroke-width="1" opacity=".5"/></svg></div>', unsafe_allow_html=True)
+    st.markdown('<div class="lead">A small change of course. A little more room for whales.</div>', unsafe_allow_html=True)
+    render_story()
     if preview:
-        st.warning('FIXTURE PREVIEW — all routes, land, decisions, and outcomes on this page are synthetic test data. This does not verify real AIS integration or a working planner.')
+        st.caption('Illustrative preview · synthetic inputs and canned comparison outcomes')
+        with st.expander('About this preview'):
+            st.write('All route, land, decision, and outcome data in this preview are synthetic fixtures. It demonstrates the interface only; it does not verify real AIS integration or a working planner.')
     missing = services.get('integration_issues', [])
     if missing:
         with st.expander(f'Integration pending · {len(missing)} owner interfaces unavailable', expanded=False):
@@ -133,12 +136,6 @@ def render_dashboard(services):
     pair = state.get(prefix+'pair')
     inputs = state.get(prefix+'inputs')
     if not pair:
-        source = (bundle or {}).get('source', {})
-        a,b,c,d = st.columns(4)
-        a.metric('Recorded segments', len((bundle or {}).get('routes', [])))
-        b.metric('AIS provenance', 'Fixture' if preview else ('Verified' if source.get('api_verified') else 'Pending'))
-        c.metric('Land geometry', 'Fixture' if preview else ('Ready' if land and land.get('validated') else 'Required'))
-        d.metric('Comparison', 'Not run')
         if issues and not preview:
             st.info('Input readiness: '+ ' · '.join(issues)+'. Load validated inputs in the sidebar to begin.')
         frame, decisions, weather = {}, [], {'zones': []}
@@ -193,7 +190,7 @@ def render_dashboard(services):
             st.caption('What changed, why it changed, and where the vessel rejoins.')
             actions = [action for decision in decisions for action in decision.get('actions', [])]
             if not actions:
-                st.info('No actions to display. Run a controlled scenario to inspect decisions and rejection reasons.')
+                st.caption('Run a scenario to see route updates here.')
             for action in actions[-5:][::-1]:
                 with st.container(border=True):
                     st.markdown(f"**{action['command']} · {action['ship_id']}**")
@@ -229,6 +226,7 @@ def render_dashboard(services):
             if state.get(prefix+'saved'):
                 st.caption('Saved locally: '+state[prefix+'saved'])
     st.markdown('<div class="sectionline"></div>', unsafe_allow_html=True)
+    render_facts()
     st.caption('Santa Barbara Ocean Lab · recorded route geometry; simulated ships, whales, sightings, and weather. Source AIS updates apply to future runs only.')
 
 

@@ -31,6 +31,15 @@ comparison numbers are canned synthetic UI data, not measured planner results.
 It proves presentation and callable wiring only. The fixture validator rejects
 production use; it is not an always-accept substitute.
 
+## Ocean introduction and impact context
+
+The front page includes an original local SVG animation comparing an illustrative
+usual route with a whale-aware route. It is explanatory, not a routing algorithm
+or a measured simulation result. No artwork from the reference site is copied.
+The impact section links to Blue Whales and Blue Skies and the Marine Mammal
+Commission; program statistics are explicitly separate from this demo’s results.
+The preview flag remains visible in a concise caption with expandable details.
+
 ## Real-data walkthrough
 
 1. Set `AISSTREAM_API_KEY` in your shell as required by the source owner's adapter.
