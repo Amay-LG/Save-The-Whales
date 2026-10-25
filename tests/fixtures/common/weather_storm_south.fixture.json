@@ -1,0 +1,32 @@
+{
+ "source": "SIMULATED",
+ "coverage_start_s": 0,
+ "coverage_end_s": 12600,
+ "zones": [
+  {
+   "zone_id": "storm-south",
+   "polygon": [
+    {
+     "lat": 34.185,
+     "lon": -120.075
+    },
+    {
+     "lat": 34.185,
+     "lon": -120.055
+    },
+    {
+     "lat": 34.197,
+     "lon": -120.055
+    },
+    {
+     "lat": 34.197,
+     "lon": -120.075
+    }
+   ],
+   "severity": 0.8,
+   "active_from_s": 0,
+   "active_until_s": 3600,
+   "blocked": false
+  }
+ ]
+}

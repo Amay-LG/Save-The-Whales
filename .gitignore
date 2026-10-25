@@ -1,9 +1,26 @@
-my-artifacts/
+# Secrets
+.env
+
+# Generated AIS captures and route bundles (keep the format README)
+data/ais/*
+!data/ais/README.md
+
+# Run artifacts
 runs/*
-!runs/.gitkeep
 !runs/README.md
-data/raw/*
-!data/raw/.gitkeep
-!data/raw/README.md
+!runs/.gitkeep
+
+# Python
 __pycache__/
+*.py[cod]
 .pytest_cache/
+.venv/
+*.egg-info/
+
+# OS / local tooling
+.DS_Store
+my-artifacts/
+CLAUDE.local.md
+.claude/settings.local.json
+.claude/skills/p1-check/
+.claude/hooks/

@@ -1,0 +1,10 @@
+{
+ "detection_id": "fixture-report-0001",
+ "lat": 34.2,
+ "lon": -120.065,
+ "position_error_m": 100,
+ "observed_at": "2026-07-01T12:05:00Z",
+ "reported_at": "2026-07-01T12:05:30Z",
+ "source": "SYNTHETIC_FIXTURE",
+ "species": "blue"
+}

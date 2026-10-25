@@ -1,0 +1,51 @@
+{
+ "type": "FeatureCollection",
+ "provenance": {
+  "map_id": "fixture-land-far",
+  "source": "SYNTHETIC_FIXTURE toy rectangle (same shape moved ~11 km north, away from the recipe route)",
+  "fixture_only": true,
+  "bbox": {
+   "lat_min": 33.8,
+   "lat_max": 34.6,
+   "lon_min": -120.5,
+   "lon_max": -119.0
+  },
+  "research_only": true,
+  "note": "Explicitly fixture-only test geometry; not real or verified coastline."
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "land-far"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -120.075,
+       34.304
+      ],
+      [
+       -120.055,
+       34.304
+      ],
+      [
+       -120.055,
+       34.316
+      ],
+      [
+       -120.075,
+       34.316
+      ],
+      [
+       -120.075,
+       34.304
+      ]
+     ]
+    ]
+   }
+  }
+ ]
+}

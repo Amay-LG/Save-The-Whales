@@ -1,0 +1,7 @@
+# Shared dependencies (Tasks.md: existing pytest/pandas/Streamlit/pydeck + one WebSocket client).
+# Lower bounds only; all support Python 3.9+. numpy (installed with pandas) is used by shared.geo.
+pytest>=7
+pandas>=1.5
+streamlit>=1.30
+pydeck>=0.8
+websockets>=12

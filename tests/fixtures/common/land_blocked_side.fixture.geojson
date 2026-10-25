@@ -1,0 +1,51 @@
+{
+ "type": "FeatureCollection",
+ "provenance": {
+  "map_id": "fixture-land-blocked-side",
+  "source": "SYNTHETIC_FIXTURE toy rectangle (north of the recipe route; blocks north-side doglegs)",
+  "fixture_only": true,
+  "bbox": {
+   "lat_min": 33.8,
+   "lat_max": 34.6,
+   "lon_min": -120.5,
+   "lon_max": -119.0
+  },
+  "research_only": true,
+  "note": "Explicitly fixture-only test geometry; not real or verified coastline."
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "land-blocked-side"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -120.075,
+       34.204
+      ],
+      [
+       -120.055,
+       34.204
+      ],
+      [
+       -120.055,
+       34.216
+      ],
+      [
+       -120.075,
+       34.216
+      ],
+      [
+       -120.075,
+       34.204
+      ]
+     ]
+    ]
+   }
+  }
+ ]
+}
