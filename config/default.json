@@ -1,0 +1,11 @@
+{
+  "schema_version": "2.0",
+  "mode": "AIS_SEEDED_SIMULATION",
+  "bbox": {"lat_min": 33.8, "lat_max": 34.6, "lon_min": -120.5, "lon_max": -119.0},
+  "simulation": {"dt_s": 30, "decision_dt_s": 60, "duration_s": 7200, "drain_max_s": 1800, "wall_limit_s": 30, "max_ships": 10, "max_whales": 30, "max_frames": 300, "max_events": 2000},
+  "planner": {"max_candidates": 12, "max_geometries": 4, "max_speeds": 3, "max_detour_waypoints": 8, "lookahead_s": 900, "max_rejoin_s": 3600, "offsets_m": [500, 1000], "clearance_margin_m": 100, "min_speed_knots": 6, "max_path_ratio": 1.5, "max_added_delay_s": 900, "w_whale": 5, "w_weather": 2, "w_delay": 1, "w_distance": 0.5, "w_change": 0.1, "min_objective_improvement": 0.01, "min_whale_improvement": 0.05, "whale_risk_tolerance": 0.01, "cooldown_s": 60},
+  "sensors": {"max_reports": 50, "max_detection_age_s": 1800, "drift_mps": 1.5, "position_error_m": 50, "report_delay_s": 30, "detection_probability": 0.8, "range_m": 5000},
+  "response": {"response_lag_s": 0, "compliance": 1},
+  "metrics": {"sigma_eval_m": 300, "episode_enter_m": 500, "episode_exit_m": 750, "episode_exit_dwell_s": 120},
+  "ais": {"max_records": 5000, "min_route_points": 3, "min_route_span_s": 60, "min_route_length_m": 250, "max_gap_s": 180, "max_clip_s": 1800, "max_route_vertices": 32, "max_routes": 5}
+}
