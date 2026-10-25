@@ -1,8 +1,0 @@
-[
-  {"ship_id": "MMSI_367123450", "issued_at": "2024-07-15T14:30:00Z", "command": "DETOUR",
-   "target_speed_knots": 10.0,
-   "detour_waypoints": [{"lat": 34.250, "lon": -119.850}, {"lat": 34.310, "lon": -119.720}],
-   "valid_until": "2024-07-15T15:30:00Z",
-   "metadata": {"reason": "Blue whale detection 3.8 NM ahead", "threat_level": "HIGH",
-                "projected_delay_minutes": 12.5, "route_risk_score": 0.89}}
-]
