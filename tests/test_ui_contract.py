@@ -134,6 +134,7 @@ def test_preview_runs_and_rerender_does_not_run_again():
     from streamlit.testing.v1 import AppTest
     at=AppTest.from_file(str(Path(__file__).parent/'ui_preview.py'),default_timeout=20).run()
     assert not at.exception
+    assert not any('<section class="save-hero">' in code.value for code in at.code)
     next(b for b in at.button if b.label=='Run paired comparison').click().run()
     assert not at.exception
     run_id=at.session_state['dashboard_pair']['run_id']

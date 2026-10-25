@@ -6,7 +6,7 @@ from pathlib import Path
 def render_hero():
     import streamlit as st
     whale = base64.b64encode((Path(__file__).parent/'assets'/'whale.svg').read_bytes()).decode()
-    st.markdown(f'''<style>
+    hero = f'''<style>
     .save-hero{{position:relative;padding:28px 0 30px;overflow:hidden;min-height:190px;border-bottom:1px solid #315466;margin-bottom:18px}}
     .save-hero:after{{content:"";position:absolute;right:0;top:-10px;width:52%;height:215px;background:url("data:image/svg+xml;base64,{whale}") center/contain no-repeat;opacity:.095;pointer-events:none}}
     .save-hero h1{{position:relative;z-index:1;font-size:clamp(34px,4vw,52px)!important;line-height:1.15;margin:8px 0 14px;font-weight:550}}
@@ -24,7 +24,8 @@ def render_hero():
       <p style="font-size:13px;color:#8ddacc;margin-top:10px">A shared ocean. A little more room to live.</p>
       <a href="#santa-barbara-simulated-passage">Explore the simulation ↓</a>
       <a href="#why-this-matters">Why this matters ↓</a>
-    </section>''', unsafe_allow_html=True)
+    </section>'''
+    st.markdown('\n'.join(line.lstrip() for line in hero.splitlines()), unsafe_allow_html=True)
 
 
 def render_facts():
