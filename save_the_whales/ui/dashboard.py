@@ -14,7 +14,7 @@ CSS = '''<style>
 [data-testid="stSidebar"]{background:#092b3b;border-right:1px solid #285366}
 .block-container{padding-top:4.5rem!important;max-width:1600px}
 [data-testid="stHeader"]{background:#092433!important;height:3rem;border-bottom:1px solid #234658}
-[data-testid="stToolbar"]{display:none!important}
+[data-testid="stAppDeployButton"],[data-testid="stMainMenu"],#MainMenu{display:none!important}
 [data-testid="stSidebarUserContent"]{padding-top:1rem}
 html{scroll-padding-top:4rem}
 h1{font-weight:650!important;letter-spacing:-1.8px!important;font-size:2.5rem!important;font-family:ui-rounded,"Avenir Next",system-ui,sans-serif!important}
