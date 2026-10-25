@@ -1,0 +1,1 @@
+{"name":"Coast-side constraint","storm":false,"notes":"Use a coastal route or the shared land-blocked-side test fixture. Real land is never fabricated or moved by this preset; inspect rejection diagnostics."}
