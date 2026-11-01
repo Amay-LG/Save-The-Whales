@@ -1,0 +1,14 @@
+# Lint only; no formatter. Python 3.9 floor (see CLAUDE.md).
+target-version = "py39"
+line-length = 140
+
+[lint]
+select = ["E4", "E7", "E9", "F", "BLE"]
+ignore = ["E741"]  # `l` is the codebase's usual lambda/loop name
+
+[lint.per-file-ignores]
+# Pre-existing when ruff was adopted; owners may clean up and remove these.
+"save_the_whales/ui/plots.py" = ["E731"]
+"tests/test_end_to_end.py" = ["E731", "F401"]
+"tests/test_ui_contract.py" = ["F401"]
+"tests/fixtures/simulation/*.py" = ["F401"]

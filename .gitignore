@@ -23,4 +23,3 @@ my-artifacts/
 CLAUDE.local.md
 .claude/settings.local.json
 .claude/skills/p1-check/
-.claude/hooks/
