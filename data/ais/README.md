@@ -29,7 +29,7 @@ The capture reads `AISSTREAM_API_KEY` from the environment. When it's unset, the
 
 | Key | Default | Meaning |
 |---|---|---|
-| `gap_split_s` | 180 | Split tracks at larger gaps |
+| `gap_split_s` | 450 | Split tracks at larger gaps |
 | `max_implied_speed_knots` | 40 | Split at implausible jumps |
 | `min_fixes` / `min_span_s` / `min_travel_m` | 3 / 60 / 250 | Minimum observed route (distinct fixes, seconds, meters) |
 | `preferred_clip_s` | 900 | Clip length, so baseline travel is ≤15 min (comparison endpoint = clip exit). `max_clip_s` (1800) is the hard cap |

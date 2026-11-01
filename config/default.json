@@ -15,7 +15,7 @@
     "reconnect_max_s": 30,
     "max_consecutive_failures": 5,
 
-    "gap_split_s": 180,
+    "gap_split_s": 450,
     "max_implied_speed_knots": 40,
     "moving_sog_knots": 1.0,
     "min_fixes": 3,

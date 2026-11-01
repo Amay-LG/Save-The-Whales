@@ -229,7 +229,10 @@ def trace() -> Dict[str, Any]:
         ("storm south, detour through storm", F.make_inputs(fixture_bundle, real_land, dict(
             scen, weather=F.load_json(F.COMMON / "weather_storm_south.fixture.json")), cfg),
          F.make_scripted_decider({60: F.detour_at()}), real_land),
-        ("real AIS capture bundle", F.make_inputs(real_bundle, real_land, scen, cfg), F.no_action, real_land),
+        ("real AIS capture bundle", F.make_inputs(
+            real_bundle, real_land, dict(scen, voyages=[{"voyage_id": "v1", "route_id": real_bundle["routes"][0]["route_id"],
+                                                         "entry_s": 0}]) if real_bundle["routes"] else scen, cfg),
+         F.no_action, real_land),
     ]
     results = {}
     for name, inputs, decide, land in runs:
