@@ -1,0 +1,14 @@
+{
+  "preset_id": "crossing",
+  "label": "Whale crossing",
+  "description": "A surfaced, stationary simulated whale sits on the selected AIS-derived route halfway along it. NO_ACTION meets it; the advisor should change the route around it.",
+  "seed": 0,
+  "route_ids": [],
+  "voyages": 1,
+  "voyage_spacing_s": 600,
+  "designated_whale": {"at_fraction": 0.5, "lateral_m": 0, "speed_mps": 0.0, "heading_rel_deg": 90,
+                       "exposure": "ALWAYS", "species": "humpback"},
+  "background_whales": 0,
+  "weather": {"preset": "CLEAR", "zones": []},
+  "land_override": null
+}

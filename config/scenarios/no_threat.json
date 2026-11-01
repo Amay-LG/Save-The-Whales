@@ -1,0 +1,14 @@
+{
+  "preset_id": "no_threat",
+  "label": "No threat",
+  "description": "The default five voyages with one simulated whale 6 km to the side of the route, beyond the advisor's watch distance. The advisor should keep every baseline plan.",
+  "seed": 0,
+  "route_ids": [],
+  "voyages": 5,
+  "voyage_spacing_s": 600,
+  "designated_whale": {"at_fraction": 0.5, "lateral_m": 6000, "speed_mps": 0.0, "heading_rel_deg": 90,
+                       "exposure": "ALWAYS", "species": "humpback"},
+  "background_whales": 0,
+  "weather": {"preset": "CLEAR", "zones": []},
+  "land_override": null
+}

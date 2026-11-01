@@ -270,7 +270,8 @@ def test_sorting_and_duplicates_are_order_independent():
 
 
 def test_gap_and_jump_splitting():
-    times = [10 * i for i in range(30)] + [10 * i + 400 for i in range(30, 60)]   # one 400 s gap
+    gap = int(CONFIG["ais"]["gap_split_s"]) + 100
+    times = [10 * i for i in range(30)] + [10 * i + gap for i in range(30, 60)]   # one gap just over gap_split_s
     b = routes.prepare_routes(track(straight(8000), fixed_times=times) + [static()], toy_land(), CONFIG)
     assert b["preparation_stats"]["gap_splits"] == 1 and len(b["routes"]) == 2
     jumpy = track(straight())

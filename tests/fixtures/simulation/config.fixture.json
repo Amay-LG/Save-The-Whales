@@ -1,0 +1,51 @@
+{
+  "simulation": {
+    "dt_s": 30,
+    "decision_dt_s": 60,
+    "duration_s": 7200,
+    "drain_max_s": 1800,
+    "wall_limit_s": 30,
+    "max_voyages": 10,
+    "max_whales": 30,
+    "max_duration_s": 21600,
+    "max_drain_s": 1800,
+    "frame_every_s": 60,
+    "max_frames": 400,
+    "max_events": 2000,
+    "max_decisions": 300,
+    "record_analyst_truth": true,
+    "whale_speed_mps": 1.0,
+    "whale_speed_range_mps": [0.5, 2.0],
+    "whale_turn_every_s": 600,
+    "whale_turn_sd_deg": 30,
+    "whale_surface_s": 120,
+    "whale_deep_s": 480
+  },
+  "sensors": {
+    "sample_dt_s": 60,
+    "max_reports": 50,
+    "max_detection_age_s": 1800,
+    "observers": [
+      {"sensor_id": "lookout", "kind": "SHIP_LOOKOUT", "range_m": 4000, "p_detect": 1.0,
+       "position_error_m": 100, "delay_min_s": 0, "delay_max_s": 30}
+    ]
+  },
+  "response": {
+    "response_lag_s": 0,
+    "compliance": 1.0
+  },
+  "metrics": {
+    "sigma_eval_m": 300,
+    "encounter_enter_m": 500,
+    "encounter_exit_m": 750,
+    "encounter_exit_dwell_s": 120,
+    "whale_body_radius_m": 12.5
+  },
+  "planner": {
+    "clearance_margin_m": 100,
+    "min_speed_knots": 6,
+    "max_detour_waypoints": 8,
+    "max_path_ratio": 1.5,
+    "max_added_delay_s": 900
+  }
+}

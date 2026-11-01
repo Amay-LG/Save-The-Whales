@@ -1,0 +1,17 @@
+{
+  "preset_id": "storm_detour",
+  "label": "Storm detour",
+  "description": "No whale threat. A simulated storm (severity 0.8, active for the first hour) straddles the middle third of the route; the advisor should detour around it to cut weather exposure.",
+  "seed": 0,
+  "route_ids": [],
+  "voyages": 1,
+  "voyage_spacing_s": 600,
+  "designated_whale": null,
+  "background_whales": 0,
+  "weather": {"preset": "STORM", "zones": [
+    {"zone_id": "storm-1", "kind": "ROUTE_RELATIVE", "from_fraction": 0.35, "to_fraction": 0.65,
+     "side": "ACROSS", "near_m": 0, "far_m": 300, "severity": 0.8, "active_from_s": 0,
+     "active_until_s": 3600, "blocked": false}
+  ]},
+  "land_override": null
+}

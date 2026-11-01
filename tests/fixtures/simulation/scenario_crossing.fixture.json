@@ -1,0 +1,19 @@
+{
+  "scenario_id": "fixture-crossing",
+  "seed": 7,
+  "start_at": "2026-07-01T12:00:00Z",
+  "duration_s": 3600,
+  "voyages": [
+    {"voyage_id": "v1", "route_id": "fixture-route-001", "entry_s": 0}
+  ],
+  "whales": [
+    {"whale_id": "w-cross", "species": "blue", "start": {"lat": 34.2, "lon": -120.065}, "speed_mps": 0.0,
+     "exposure": [{"from_s": 0, "until_s": 100000, "exposed": true}]}
+  ],
+  "weather": {
+    "source": "SIMULATED",
+    "coverage_start_s": 0,
+    "coverage_end_s": 12600,
+    "zones": []
+  }
+}

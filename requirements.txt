@@ -5,3 +5,4 @@ pandas>=1.5
 streamlit>=1.30
 pydeck>=0.8
 websockets>=12
+ruff>=0.17
